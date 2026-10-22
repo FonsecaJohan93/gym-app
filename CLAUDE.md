@@ -37,3 +37,8 @@ React 19 + TypeScript + Vite + Tailwind v4 (plugin `@tailwindcss/vite`) + `vite-
 ## Verificación
 
 Antes de hacer push, corre `npm run build`: incluye `tsc -b` y debe terminar sin errores.
+
+## Commits
+
+- **No agregues `Co-Authored-By` ni otras líneas de coautoría en los commits.** El plan gratis de Netlify bloquea el build de repositorios privados si algún autor del commit no es miembro de la cuenta ("Unrecognized Git contributor").
+- Los cambios se publican al hacer push a `main`. Si trabajas en otra rama, haz merge a `main` cuando el usuario lo pida.

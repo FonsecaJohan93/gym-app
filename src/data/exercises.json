@@ -1,0 +1,2076 @@
+[
+ {
+  "id": "Barbell_Bench_Press_-_Medium_Grip",
+  "es": "Press de banca con barra",
+  "en": "Barbell Bench Press - Medium Grip",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Barbell_Incline_Bench_Press_-_Medium_Grip",
+  "es": "Press inclinado con barra",
+  "en": "Barbell Incline Bench Press - Medium Grip",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Decline_Barbell_Bench_Press",
+  "es": "Press declinado con barra",
+  "en": "Decline Barbell Bench Press",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Bench_Press",
+  "es": "Press de banca con mancuernas",
+  "en": "Dumbbell Bench Press",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Incline_Dumbbell_Press",
+  "es": "Press inclinado con mancuernas",
+  "en": "Incline Dumbbell Press",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Decline_Dumbbell_Bench_Press",
+  "es": "Press declinado con mancuernas",
+  "en": "Decline Dumbbell Bench Press",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Flyes",
+  "es": "Aperturas con mancuernas",
+  "en": "Dumbbell Flyes",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Incline_Dumbbell_Flyes",
+  "es": "Aperturas inclinadas con mancuernas",
+  "en": "Incline Dumbbell Flyes",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Butterfly",
+  "es": "Peck deck (mariposa)",
+  "en": "Butterfly",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Cable_Crossover",
+  "es": "Cruce de poleas",
+  "en": "Cable Crossover",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Low_Cable_Crossover",
+  "es": "Cruce de poleas desde abajo",
+  "en": "Low Cable Crossover",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Leverage_Chest_Press",
+  "es": "Press de pecho en máquina",
+  "en": "Leverage Chest Press",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Leverage_Incline_Chest_Press",
+  "es": "Press inclinado en máquina",
+  "en": "Leverage Incline Chest Press",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Smith_Machine_Bench_Press",
+  "es": "Press de banca en Smith",
+  "en": "Smith Machine Bench Press",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Smith_Machine_Incline_Bench_Press",
+  "es": "Press inclinado en Smith",
+  "en": "Smith Machine Incline Bench Press",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Pushups",
+  "es": "Flexiones de pecho",
+  "en": "Pushups",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Incline_Push-Up",
+  "es": "Flexiones inclinadas",
+  "en": "Incline Push-Up",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Dips_-_Chest_Version",
+  "es": "Fondos para pecho",
+  "en": "Dips - Chest Version",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Otro",
+  "level": "intermediate"
+ },
+ {
+  "id": "Straight-Arm_Dumbbell_Pullover",
+  "es": "Pullover con mancuerna",
+  "en": "Straight-Arm Dumbbell Pullover",
+  "group": "Pecho",
+  "muscles": [
+   "pecho"
+  ],
+  "secondary": [
+   "dorsales",
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Pullups",
+  "es": "Dominadas",
+  "en": "Pullups",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [
+   "bíceps",
+   "espalda media"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Chin-Up",
+  "es": "Dominadas supinas",
+  "en": "Chin-Up",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [
+   "bíceps",
+   "antebrazos",
+   "espalda media"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Wide-Grip_Lat_Pulldown",
+  "es": "Jalón al pecho agarre ancho",
+  "en": "Wide-Grip Lat Pulldown",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [
+   "bíceps",
+   "espalda media",
+   "hombros"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Close-Grip_Front_Lat_Pulldown",
+  "es": "Jalón al pecho agarre cerrado",
+  "en": "Close-Grip Front Lat Pulldown",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [
+   "bíceps",
+   "espalda media",
+   "hombros"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "V-Bar_Pulldown",
+  "es": "Jalón con triángulo",
+  "en": "V-Bar Pulldown",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [
+   "bíceps",
+   "espalda media",
+   "hombros"
+  ],
+  "equipment": "Polea",
+  "level": "intermediate"
+ },
+ {
+  "id": "Underhand_Cable_Pulldowns",
+  "es": "Jalón agarre supino",
+  "en": "Underhand Cable Pulldowns",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [
+   "bíceps",
+   "espalda media",
+   "hombros"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "One_Arm_Lat_Pulldown",
+  "es": "Jalón a una mano",
+  "en": "One Arm Lat Pulldown",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [
+   "bíceps",
+   "espalda media"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Straight-Arm_Pulldown",
+  "es": "Jalón con brazos rectos",
+  "en": "Straight-Arm Pulldown",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Seated_Cable_Rows",
+  "es": "Remo sentado en polea",
+  "en": "Seated Cable Rows",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "dorsales",
+   "hombros"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Seated_One-arm_Cable_Pulley_Rows",
+  "es": "Remo a una mano en polea",
+  "en": "Seated One-arm Cable Pulley Rows",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "dorsales",
+   "trapecio"
+  ],
+  "equipment": "Polea",
+  "level": "intermediate"
+ },
+ {
+  "id": "Bent_Over_Barbell_Row",
+  "es": "Remo con barra",
+  "en": "Bent Over Barbell Row",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "dorsales",
+   "hombros"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Reverse_Grip_Bent-Over_Rows",
+  "es": "Remo con barra agarre supino",
+  "en": "Reverse Grip Bent-Over Rows",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "dorsales",
+   "hombros"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "One-Arm_Dumbbell_Row",
+  "es": "Remo con mancuerna a una mano",
+  "en": "One-Arm Dumbbell Row",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "dorsales",
+   "hombros"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Bent_Over_Two-Dumbbell_Row",
+  "es": "Remo inclinado con mancuernas",
+  "en": "Bent Over Two-Dumbbell Row",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "dorsales",
+   "hombros"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Incline_Row",
+  "es": "Remo en banco inclinado",
+  "en": "Dumbbell Incline Row",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "antebrazos",
+   "dorsales",
+   "hombros"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "T-Bar_Row_with_Handle",
+  "es": "Remo en T",
+  "en": "T-Bar Row with Handle",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "dorsales"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Lying_T-Bar_Row",
+  "es": "Remo en T con apoyo de pecho",
+  "en": "Lying T-Bar Row",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "bíceps",
+   "dorsales"
+  ],
+  "equipment": "Máquina",
+  "level": "intermediate"
+ },
+ {
+  "id": "Leverage_High_Row",
+  "es": "Remo alto en máquina",
+  "en": "Leverage High Row",
+  "group": "Espalda",
+  "muscles": [
+   "espalda media"
+  ],
+  "secondary": [
+   "dorsales"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Leverage_Iso_Row",
+  "es": "Remo en máquina",
+  "en": "Leverage Iso Row",
+  "group": "Espalda",
+  "muscles": [
+   "dorsales"
+  ],
+  "secondary": [
+   "bíceps",
+   "espalda media"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Barbell_Deadlift",
+  "es": "Peso muerto",
+  "en": "Barbell Deadlift",
+  "group": "Espalda",
+  "muscles": [
+   "lumbares"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "antebrazos",
+   "glúteos",
+   "femorales",
+   "dorsales",
+   "espalda media",
+   "cuádriceps",
+   "trapecio"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Hyperextensions_Back_Extensions",
+  "es": "Hiperextensiones lumbares",
+  "en": "Hyperextensions (Back Extensions)",
+  "group": "Espalda",
+  "muscles": [
+   "lumbares"
+  ],
+  "secondary": [
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Otro",
+  "level": "beginner"
+ },
+ {
+  "id": "Stiff_Leg_Barbell_Good_Morning",
+  "es": "Buenos días con barra",
+  "en": "Stiff Leg Barbell Good Morning",
+  "group": "Espalda",
+  "muscles": [
+   "lumbares"
+  ],
+  "secondary": [
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Barbell_Shrug",
+  "es": "Encogimientos con barra",
+  "en": "Barbell Shrug",
+  "group": "Espalda",
+  "muscles": [
+   "trapecio"
+  ],
+  "secondary": [],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Shrug",
+  "es": "Encogimientos con mancuernas",
+  "en": "Dumbbell Shrug",
+  "group": "Espalda",
+  "muscles": [
+   "trapecio"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Barbell_Shoulder_Press",
+  "es": "Press militar sentado con barra",
+  "en": "Barbell Shoulder Press",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "pecho",
+   "tríceps"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Standing_Military_Press",
+  "es": "Press militar de pie",
+  "en": "Standing Military Press",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "tríceps"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Shoulder_Press",
+  "es": "Press de hombros con mancuernas",
+  "en": "Dumbbell Shoulder Press",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "tríceps"
+  ],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Arnold_Dumbbell_Press",
+  "es": "Press Arnold",
+  "en": "Arnold Dumbbell Press",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "tríceps"
+  ],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Machine_Shoulder_Military_Press",
+  "es": "Press de hombros en máquina",
+  "en": "Machine Shoulder (Military) Press",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "tríceps"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Smith_Machine_Overhead_Shoulder_Press",
+  "es": "Press de hombros en Smith",
+  "en": "Smith Machine Overhead Shoulder Press",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "tríceps"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Side_Lateral_Raise",
+  "es": "Elevaciones laterales",
+  "en": "Side Lateral Raise",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Cable_Seated_Lateral_Raise",
+  "es": "Elevaciones laterales en polea",
+  "en": "Cable Seated Lateral Raise",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "espalda media",
+   "trapecio"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Front_Dumbbell_Raise",
+  "es": "Elevaciones frontales con mancuerna",
+  "en": "Front Dumbbell Raise",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Front_Cable_Raise",
+  "es": "Elevaciones frontales en polea",
+  "en": "Front Cable Raise",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Reverse_Flyes",
+  "es": "Pájaros con mancuernas",
+  "en": "Reverse Flyes",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Seated_Bent-Over_Rear_Delt_Raise",
+  "es": "Pájaros sentado",
+  "en": "Seated Bent-Over Rear Delt Raise",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Reverse_Machine_Flyes",
+  "es": "Peck deck invertido",
+  "en": "Reverse Machine Flyes",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Cable_Rear_Delt_Fly",
+  "es": "Aperturas posteriores en polea",
+  "en": "Cable Rear Delt Fly",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Face_Pull",
+  "es": "Face pull",
+  "en": "Face Pull",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "espalda media"
+  ],
+  "equipment": "Polea",
+  "level": "intermediate"
+ },
+ {
+  "id": "Upright_Barbell_Row",
+  "es": "Remo al mentón con barra",
+  "en": "Upright Barbell Row",
+  "group": "Hombros",
+  "muscles": [
+   "hombros"
+  ],
+  "secondary": [
+   "trapecio"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Barbell_Curl",
+  "es": "Curl con barra",
+  "en": "Barbell Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [
+   "antebrazos"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "EZ-Bar_Curl",
+  "es": "Curl con barra Z",
+  "en": "EZ-Bar Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Barra Z",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Bicep_Curl",
+  "es": "Curl con mancuernas",
+  "en": "Dumbbell Bicep Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [
+   "antebrazos"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Alternate_Bicep_Curl",
+  "es": "Curl alterno con mancuernas",
+  "en": "Dumbbell Alternate Bicep Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [
+   "antebrazos"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Hammer_Curls",
+  "es": "Curl martillo",
+  "en": "Hammer Curls",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Cable_Hammer_Curls_-_Rope_Attachment",
+  "es": "Curl martillo en polea con cuerda",
+  "en": "Cable Hammer Curls - Rope Attachment",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Incline_Dumbbell_Curl",
+  "es": "Curl inclinado con mancuernas",
+  "en": "Incline Dumbbell Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Concentration_Curls",
+  "es": "Curl concentrado",
+  "en": "Concentration Curls",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [
+   "antebrazos"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Preacher_Curl",
+  "es": "Curl predicador con barra",
+  "en": "Preacher Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Machine_Preacher_Curls",
+  "es": "Curl predicador en máquina",
+  "en": "Machine Preacher Curls",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Machine_Bicep_Curl",
+  "es": "Curl de bíceps en máquina",
+  "en": "Machine Bicep Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Standing_Biceps_Cable_Curl",
+  "es": "Curl de bíceps en polea",
+  "en": "Standing Biceps Cable Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Spider_Curl",
+  "es": "Curl araña",
+  "en": "Spider Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [],
+  "equipment": "Barra Z",
+  "level": "beginner"
+ },
+ {
+  "id": "Zottman_Curl",
+  "es": "Curl Zottman",
+  "en": "Zottman Curl",
+  "group": "Bíceps",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [
+   "antebrazos"
+  ],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Triceps_Pushdown",
+  "es": "Extensión de tríceps en polea",
+  "en": "Triceps Pushdown",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Triceps_Pushdown_-_Rope_Attachment",
+  "es": "Extensión de tríceps con cuerda",
+  "en": "Triceps Pushdown - Rope Attachment",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Reverse_Grip_Triceps_Pushdown",
+  "es": "Extensión de tríceps agarre supino",
+  "en": "Reverse Grip Triceps Pushdown",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Triceps_Overhead_Extension_with_Rope",
+  "es": "Extensión de tríceps tras nuca con cuerda",
+  "en": "Triceps Overhead Extension with Rope",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Cable_One_Arm_Tricep_Extension",
+  "es": "Extensión de tríceps a una mano en polea",
+  "en": "Cable One Arm Tricep Extension",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "EZ-Bar_Skullcrusher",
+  "es": "Rompecráneos con barra Z",
+  "en": "EZ-Bar Skullcrusher",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [
+   "antebrazos"
+  ],
+  "equipment": "Barra Z",
+  "level": "beginner"
+ },
+ {
+  "id": "Lying_Dumbbell_Tricep_Extension",
+  "es": "Extensión de tríceps acostado con mancuernas",
+  "en": "Lying Dumbbell Tricep Extension",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [
+   "pecho",
+   "hombros"
+  ],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Standing_Dumbbell_Triceps_Extension",
+  "es": "Press francés de pie con mancuerna",
+  "en": "Standing Dumbbell Triceps Extension",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Tricep_Dumbbell_Kickback",
+  "es": "Patada de tríceps",
+  "en": "Tricep Dumbbell Kickback",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Close-Grip_Barbell_Bench_Press",
+  "es": "Press de banca agarre cerrado",
+  "en": "Close-Grip Barbell Bench Press",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [
+   "pecho",
+   "hombros"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Dips_-_Triceps_Version",
+  "es": "Fondos en paralelas",
+  "en": "Dips - Triceps Version",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [
+   "pecho",
+   "hombros"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Bench_Dips",
+  "es": "Fondos en banco",
+  "en": "Bench Dips",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [
+   "pecho",
+   "hombros"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Dip_Machine",
+  "es": "Fondos en máquina",
+  "en": "Dip Machine",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [
+   "pecho",
+   "hombros"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Machine_Triceps_Extension",
+  "es": "Extensión de tríceps en máquina",
+  "en": "Machine Triceps Extension",
+  "group": "Tríceps",
+  "muscles": [
+   "tríceps"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Palms-Up_Dumbbell_Wrist_Curl_Over_A_Bench",
+  "es": "Curl de muñeca con mancuerna",
+  "en": "Palms-Up Dumbbell Wrist Curl Over A Bench",
+  "group": "Antebrazos",
+  "muscles": [
+   "antebrazos"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Palms-Down_Wrist_Curl_Over_A_Bench",
+  "es": "Curl de muñeca inverso con barra",
+  "en": "Palms-Down Wrist Curl Over A Bench",
+  "group": "Antebrazos",
+  "muscles": [
+   "antebrazos"
+  ],
+  "secondary": [],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Reverse_Barbell_Curl",
+  "es": "Curl inverso con barra",
+  "en": "Reverse Barbell Curl",
+  "group": "Antebrazos",
+  "muscles": [
+   "bíceps"
+  ],
+  "secondary": [
+   "antebrazos"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Farmers_Walk",
+  "es": "Paseo del granjero",
+  "en": "Farmer's Walk",
+  "group": "Antebrazos",
+  "muscles": [
+   "antebrazos"
+  ],
+  "secondary": [
+   "abdomen",
+   "glúteos",
+   "femorales",
+   "lumbares",
+   "cuádriceps",
+   "trapecio"
+  ],
+  "equipment": "Otro",
+  "level": "intermediate"
+ },
+ {
+  "id": "Barbell_Squat",
+  "es": "Sentadilla con barra",
+  "en": "Barbell Squat",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales",
+   "lumbares"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Barbell_Full_Squat",
+  "es": "Sentadilla profunda con barra",
+  "en": "Barbell Full Squat",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales",
+   "lumbares"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Front_Barbell_Squat",
+  "es": "Sentadilla frontal",
+  "en": "Front Barbell Squat",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Barra",
+  "level": "expert"
+ },
+ {
+  "id": "Smith_Machine_Squat",
+  "es": "Sentadilla en Smith",
+  "en": "Smith Machine Squat",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales",
+   "lumbares"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Goblet_Squat",
+  "es": "Sentadilla goblet",
+  "en": "Goblet Squat",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales",
+   "hombros"
+  ],
+  "equipment": "Kettlebell",
+  "level": "beginner"
+ },
+ {
+  "id": "Hack_Squat",
+  "es": "Sentadilla hack",
+  "en": "Hack Squat",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Leg_Press",
+  "es": "Prensa de piernas",
+  "en": "Leg Press",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Narrow_Stance_Leg_Press",
+  "es": "Prensa con pies juntos",
+  "en": "Narrow Stance Leg Press",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Máquina",
+  "level": "intermediate"
+ },
+ {
+  "id": "Leg_Extensions",
+  "es": "Extensión de cuádriceps",
+  "en": "Leg Extensions",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Single-Leg_Leg_Extension",
+  "es": "Extensión de cuádriceps a una pierna",
+  "en": "Single-Leg Leg Extension",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Lunges",
+  "es": "Zancadas con mancuernas",
+  "en": "Dumbbell Lunges",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Barbell_Walking_Lunge",
+  "es": "Zancadas caminando con barra",
+  "en": "Barbell Walking Lunge",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Barra",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Rear_Lunge",
+  "es": "Zancada hacia atrás con mancuernas",
+  "en": "Dumbbell Rear Lunge",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Split_Squat_with_Dumbbells",
+  "es": "Sentadilla split con mancuernas",
+  "en": "Split Squat with Dumbbells",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Dumbbell_Step_Ups",
+  "es": "Subidas al cajón con mancuernas",
+  "en": "Dumbbell Step Ups",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Bodyweight_Squat",
+  "es": "Sentadilla sin peso",
+  "en": "Bodyweight Squat",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Plie_Dumbbell_Squat",
+  "es": "Sentadilla sumo con mancuerna",
+  "en": "Plie Dumbbell Squat",
+  "group": "Cuádriceps",
+  "muscles": [
+   "cuádriceps"
+  ],
+  "secondary": [
+   "abdomen",
+   "pantorrillas",
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Thigh_Adductor",
+  "es": "Aductores en máquina",
+  "en": "Thigh Adductor",
+  "group": "Cuádriceps",
+  "muscles": [
+   "aductores"
+  ],
+  "secondary": [
+   "glúteos",
+   "femorales"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Lying_Leg_Curls",
+  "es": "Curl femoral acostado",
+  "en": "Lying Leg Curls",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Seated_Leg_Curl",
+  "es": "Curl femoral sentado",
+  "en": "Seated Leg Curl",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Standing_Leg_Curl",
+  "es": "Curl femoral de pie",
+  "en": "Standing Leg Curl",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Romanian_Deadlift",
+  "es": "Peso muerto rumano",
+  "en": "Romanian Deadlift",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "lumbares"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Stiff-Legged_Barbell_Deadlift",
+  "es": "Peso muerto piernas rígidas",
+  "en": "Stiff-Legged Barbell Deadlift",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [
+   "glúteos",
+   "lumbares"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Stiff-Legged_Dumbbell_Deadlift",
+  "es": "Peso muerto rumano con mancuernas",
+  "en": "Stiff-Legged Dumbbell Deadlift",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [
+   "glúteos",
+   "lumbares"
+  ],
+  "equipment": "Mancuernas",
+  "level": "beginner"
+ },
+ {
+  "id": "Sumo_Deadlift",
+  "es": "Peso muerto sumo",
+  "en": "Sumo Deadlift",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [
+   "aductores",
+   "antebrazos",
+   "glúteos",
+   "lumbares",
+   "espalda media",
+   "cuádriceps",
+   "trapecio"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Good_Morning",
+  "es": "Buenos días",
+  "en": "Good Morning",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [
+   "abdomen",
+   "glúteos",
+   "lumbares"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Natural_Glute_Ham_Raise",
+  "es": "Curl nórdico",
+  "en": "Natural Glute Ham Raise",
+  "group": "Femorales",
+  "muscles": [
+   "femorales"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "glúteos",
+   "lumbares"
+  ],
+  "equipment": "Peso corporal",
+  "level": "intermediate"
+ },
+ {
+  "id": "Barbell_Hip_Thrust",
+  "es": "Hip thrust con barra",
+  "en": "Barbell Hip Thrust",
+  "group": "Glúteos",
+  "muscles": [
+   "glúteos"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "femorales"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Barbell_Glute_Bridge",
+  "es": "Puente de glúteos con barra",
+  "en": "Barbell Glute Bridge",
+  "group": "Glúteos",
+  "muscles": [
+   "glúteos"
+  ],
+  "secondary": [
+   "pantorrillas",
+   "femorales"
+  ],
+  "equipment": "Barra",
+  "level": "intermediate"
+ },
+ {
+  "id": "Butt_Lift_Bridge",
+  "es": "Puente de glúteos",
+  "en": "Butt Lift (Bridge)",
+  "group": "Glúteos",
+  "muscles": [
+   "glúteos"
+  ],
+  "secondary": [
+   "femorales"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Single_Leg_Glute_Bridge",
+  "es": "Puente de glúteo a una pierna",
+  "en": "Single Leg Glute Bridge",
+  "group": "Glúteos",
+  "muscles": [
+   "glúteos"
+  ],
+  "secondary": [
+   "femorales"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "One-Legged_Cable_Kickback",
+  "es": "Patada de glúteo en polea",
+  "en": "One-Legged Cable Kickback",
+  "group": "Glúteos",
+  "muscles": [
+   "glúteos"
+  ],
+  "secondary": [
+   "femorales"
+  ],
+  "equipment": "Polea",
+  "level": "intermediate"
+ },
+ {
+  "id": "Glute_Kickback",
+  "es": "Patada de glúteo en el suelo",
+  "en": "Glute Kickback",
+  "group": "Glúteos",
+  "muscles": [
+   "glúteos"
+  ],
+  "secondary": [
+   "femorales"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Pull_Through",
+  "es": "Pull through en polea",
+  "en": "Pull Through",
+  "group": "Glúteos",
+  "muscles": [
+   "glúteos"
+  ],
+  "secondary": [
+   "femorales",
+   "lumbares"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Thigh_Abductor",
+  "es": "Abductores en máquina",
+  "en": "Thigh Abductor",
+  "group": "Glúteos",
+  "muscles": [
+   "abductores"
+  ],
+  "secondary": [
+   "glúteos"
+  ],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Standing_Calf_Raises",
+  "es": "Elevación de talones de pie en máquina",
+  "en": "Standing Calf Raises",
+  "group": "Pantorrillas",
+  "muscles": [
+   "pantorrillas"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Seated_Calf_Raise",
+  "es": "Elevación de talones sentado",
+  "en": "Seated Calf Raise",
+  "group": "Pantorrillas",
+  "muscles": [
+   "pantorrillas"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Calf_Press_On_The_Leg_Press_Machine",
+  "es": "Pantorrillas en prensa",
+  "en": "Calf Press On The Leg Press Machine",
+  "group": "Pantorrillas",
+  "muscles": [
+   "pantorrillas"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Standing_Dumbbell_Calf_Raise",
+  "es": "Elevación de talones con mancuernas",
+  "en": "Standing Dumbbell Calf Raise",
+  "group": "Pantorrillas",
+  "muscles": [
+   "pantorrillas"
+  ],
+  "secondary": [],
+  "equipment": "Mancuernas",
+  "level": "intermediate"
+ },
+ {
+  "id": "Smith_Machine_Calf_Raise",
+  "es": "Elevación de talones en Smith",
+  "en": "Smith Machine Calf Raise",
+  "group": "Pantorrillas",
+  "muscles": [
+   "pantorrillas"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "beginner"
+ },
+ {
+  "id": "Crunches",
+  "es": "Abdominales (crunch)",
+  "en": "Crunches",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Cable_Crunch",
+  "es": "Crunch en polea",
+  "en": "Cable Crunch",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Ab_Crunch_Machine",
+  "es": "Crunch en máquina",
+  "en": "Ab Crunch Machine",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Máquina",
+  "level": "intermediate"
+ },
+ {
+  "id": "Decline_Crunch",
+  "es": "Crunch declinado",
+  "en": "Decline Crunch",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "intermediate"
+ },
+ {
+  "id": "Reverse_Crunch",
+  "es": "Crunch inverso",
+  "en": "Reverse Crunch",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Oblique_Crunches",
+  "es": "Crunch oblicuo",
+  "en": "Oblique Crunches",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Hanging_Leg_Raise",
+  "es": "Elevación de piernas colgado",
+  "en": "Hanging Leg Raise",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "expert"
+ },
+ {
+  "id": "Flat_Bench_Lying_Leg_Raise",
+  "es": "Elevación de piernas en banco",
+  "en": "Flat Bench Lying Leg Raise",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Plank",
+  "es": "Plancha",
+  "en": "Plank",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Side_Bridge",
+  "es": "Plancha lateral",
+  "en": "Side Bridge",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [
+   "hombros"
+  ],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Russian_Twist",
+  "es": "Giros rusos",
+  "en": "Russian Twist",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [
+   "lumbares"
+  ],
+  "equipment": "Peso corporal",
+  "level": "intermediate"
+ },
+ {
+  "id": "Dead_Bug",
+  "es": "Dead bug",
+  "en": "Dead Bug",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Air_Bike",
+  "es": "Bicicleta abdominal",
+  "en": "Air Bike",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [],
+  "equipment": "Peso corporal",
+  "level": "beginner"
+ },
+ {
+  "id": "Barbell_Ab_Rollout_-_On_Knees",
+  "es": "Rueda abdominal de rodillas",
+  "en": "Barbell Ab Rollout - On Knees",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [
+   "lumbares",
+   "hombros"
+  ],
+  "equipment": "Barra",
+  "level": "expert"
+ },
+ {
+  "id": "Standing_Cable_Wood_Chop",
+  "es": "Leñador en polea",
+  "en": "Standing Cable Wood Chop",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [
+   "hombros"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ },
+ {
+  "id": "Pallof_Press",
+  "es": "Press Pallof",
+  "en": "Pallof Press",
+  "group": "Abdomen",
+  "muscles": [
+   "abdomen"
+  ],
+  "secondary": [
+   "pecho",
+   "hombros",
+   "tríceps"
+  ],
+  "equipment": "Polea",
+  "level": "beginner"
+ }
+]

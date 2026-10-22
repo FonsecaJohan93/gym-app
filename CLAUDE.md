@@ -40,5 +40,6 @@ Antes de hacer push, corre `npm run build`: incluye `tsc -b` y debe terminar sin
 
 ## Commits
 
-- **No agregues `Co-Authored-By` ni otras líneas de coautoría en los commits.** El plan gratis de Netlify bloquea el build de repositorios privados si algún autor del commit no es miembro de la cuenta ("Unrecognized Git contributor").
+- **No agregues `Co-Authored-By` ni otras líneas de coautoría en los commits** (lo pidió el dueño).
+- El repositorio es **público** a propósito: con el plan gratis de Netlify, los repositorios privados bloqueaban el build ("Unrecognized Git contributor"). Tiene un aviso de todos los derechos reservados (`LICENSE`). Nunca subas secretos: `AUTH_SECRET` e `INVITE_CODE` viven solo en las variables de entorno de Netlify.
 - Los cambios se publican al hacer push a `main`. Si trabajas en otra rama, haz merge a `main` cuando el usuario lo pida.

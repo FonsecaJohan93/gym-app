@@ -11,7 +11,7 @@ import { useCurrentUser } from './lib/store'
 
 const TABS = [
   { to: '/', label: 'Hoy', icon: '💪' },
-  { to: '/biblioteca', label: 'Biblioteca', icon: '📚' },
+  { to: '/biblioteca', label: 'Biblioteca', icon: '🗂️' },
   { to: '/progreso', label: 'Progreso', icon: '📈' },
   { to: '/historial', label: 'Historial', icon: '🗓️' },
 ]

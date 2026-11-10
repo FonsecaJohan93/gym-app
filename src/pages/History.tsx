@@ -4,6 +4,7 @@ import { dayLabel } from '../lib/split'
 import { deleteSession } from '../lib/actions'
 import { relativeDay, EFFORT_LABEL, VERDICT_LABEL } from '../lib/insights'
 import { APP_VERSION } from '../lib/version'
+import { PageTitle } from '../components/Menu'
 import { exportBackup, importBackup, signOut, useAppState, useCurrentUser, useSyncStatus } from '../lib/store'
 
 export default function History() {
@@ -25,8 +26,8 @@ export default function History() {
 
   return (
     <div className="px-4">
-      <h1 className="pt-8 text-2xl font-bold">Historial</h1>
-      <p className="text-sm text-slate-600">
+      <PageTitle className="pt-6">Historial</PageTitle>
+      <p className="pl-10 text-sm text-slate-600">
         {sessions.length} entrenamiento{sessions.length === 1 ? '' : 's'}
         {swaps.length > 0 && ` · ${swaps.length} cambio${swaps.length === 1 ? '' : 's'} de ejercicio`}
       </p>

@@ -2,6 +2,9 @@
 
 La versión se ve en Historial (abajo) y en la pantalla de inicio de sesión.
 
+## 0.6.0 — 2026-11-10
+- Navegación en panel lateral: botón ☰ junto al título de cada pantalla. Se quitó el menú inferior; abajo solo queda el botón principal (Empezar, Armar rutina, Guardar rutina).
+
 ## 0.5.1 — 2026-11-10
 - Menú inferior con iconos de línea en verde (pesa, base de datos, gráfica, calendario) en lugar de emojis.
 

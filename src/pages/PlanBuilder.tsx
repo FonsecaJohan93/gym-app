@@ -5,6 +5,7 @@ import { buildSplit, dayLabel } from '../lib/split'
 import { savePlan } from '../lib/actions'
 import { useAppState } from '../lib/store'
 import { ExerciseImage } from '../components/ExerciseImage'
+import { BottomCTA, PageTitle } from '../components/Menu'
 import type { PlanDay } from '../types'
 
 export default function PlanBuilder() {
@@ -45,11 +46,11 @@ export default function PlanBuilder() {
 
   return (
     <div className="px-4">
-      <header>
-        <Link to="/biblioteca" className="mt-4 inline-block text-sm text-slate-600">
-          ← Biblioteca
+      <header className="pt-4">
+        <PageTitle>Tu rutina</PageTitle>
+        <Link to="/biblioteca" className="pl-10 text-sm text-slate-600">
+          ← Volver a la biblioteca
         </Link>
-        <h1 className="mt-2 text-2xl font-bold">Tu rutina</h1>
       </header>
 
       <section className="mt-5">
@@ -119,9 +120,11 @@ export default function PlanBuilder() {
         ))}
       </div>
 
-      <button onClick={save} className="mt-6 mb-8 w-full rounded-2xl bg-accent py-4 text-lg font-bold text-white">
-        Guardar rutina
-      </button>
+      <BottomCTA>
+        <button onClick={save} className="w-full rounded-2xl bg-accent py-4 text-lg font-bold text-white shadow-lg shadow-black/15">
+          Guardar rutina
+        </button>
+      </BottomCTA>
     </div>
   )
 }

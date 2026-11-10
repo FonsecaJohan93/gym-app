@@ -6,6 +6,7 @@ import { acceptSwap, dismissProposal, setNextDay, startWorkout } from '../lib/ac
 import { candidatesFor, lastEntry, pendingProposals, relativeDay, VERDICT_LABEL, type Proposal } from '../lib/insights'
 import { useAppState } from '../lib/store'
 import { ExerciseImage } from '../components/ExerciseImage'
+import { BottomCTA, MenuButton } from '../components/Menu'
 
 export default function Home() {
   const state = useAppState()
@@ -14,8 +15,11 @@ export default function Home() {
 
   if (!plan) {
     return (
-      <div className="px-6 pt-16 text-center">
-        <div className="text-6xl">🏋️</div>
+      <div className="px-6 pt-4 text-center">
+        <div className="text-left">
+          <MenuButton />
+        </div>
+        <div className="mt-8 text-6xl">🏋️</div>
         <h1 className="mt-4 text-3xl font-bold">Tu rutina, a tu medida</h1>
         <p className="mt-3 text-slate-600">
           Elige tus ejercicios, dinos cuántos días vas, y después de cada ejercicio cuéntanos qué tal te pareció. Si algo
@@ -40,14 +44,19 @@ export default function Home() {
 
   return (
     <div className="px-4">
-      <header className="pt-4">
-        <p className="pt-4 text-sm text-slate-600">
-          {lastSession ? `Último entrenamiento: ${relativeDay(lastSession.date)} (${lastSession.dayName})` : 'Aún no has entrenado'}
-        </p>
-        <h1 className="text-3xl font-bold">
-          Hoy toca <span className="text-accent">{dayLabel(dayIndex)}</span>
-        </h1>
-        <p className="text-lg text-slate-700">{day.name}</p>
+      <header className="pt-6">
+        <div className="flex items-center gap-2">
+          <MenuButton />
+          <h1 className="text-3xl font-bold">
+            Hoy toca <span className="text-accent">{dayLabel(dayIndex)}</span>
+          </h1>
+        </div>
+        <div className="pl-10">
+          <p className="text-lg text-slate-700">{day.name}</p>
+          <p className="text-sm text-slate-600">
+            {lastSession ? `Último entrenamiento: ${relativeDay(lastSession.date)} (${lastSession.dayName})` : 'Aún no has entrenado'}
+          </p>
+        </div>
       </header>
 
       {plan.days.length > 1 && (
@@ -103,16 +112,18 @@ export default function Home() {
         ))}
       </section>
 
-      {day.exerciseIds.length > 0 && (
-        <button onClick={start} className="mt-5 w-full rounded-2xl bg-accent py-4 text-xl font-bold text-white">
-          {draft ? 'Continuar entrenamiento' : 'Empezar'}
-        </button>
-      )}
-
-      <div className="mt-6 mb-4 flex justify-center gap-6 text-sm text-slate-600">
+      <div className="mt-5 flex justify-center gap-6 text-sm text-slate-600">
         <Link to="/biblioteca">Editar ejercicios</Link>
         <Link to="/rutina">Cambiar días</Link>
       </div>
+
+      {day.exerciseIds.length > 0 && (
+        <BottomCTA>
+          <button onClick={start} className="w-full rounded-2xl bg-accent py-4 text-xl font-bold text-white shadow-lg shadow-black/15">
+            {draft ? 'Continuar entrenamiento' : 'Empezar'}
+          </button>
+        </BottomCTA>
+      )}
     </div>
   )
 }

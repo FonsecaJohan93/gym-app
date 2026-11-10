@@ -4,6 +4,7 @@ import { EXERCISES, GROUPS } from '../lib/exercises'
 import { toggleSelection } from '../lib/actions'
 import { useAppState } from '../lib/store'
 import { ExerciseImage } from '../components/ExerciseImage'
+import { PageTitle } from '../components/Menu'
 
 const normalize = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()
 
@@ -30,8 +31,8 @@ export default function Library() {
   return (
     <div>
       <header className="sticky top-0 z-10 bg-ink/95 px-4 pb-3 backdrop-blur">
-        <h1 className="pt-4 text-2xl font-bold">Biblioteca</h1>
-        <p className="text-sm text-slate-600">Toca los ejercicios que quieres en tu rutina.</p>
+        <PageTitle className="pt-4">Biblioteca</PageTitle>
+        <p className="pl-10 text-sm text-slate-600">Toca los ejercicios que quieres en tu rutina.</p>
         <input
           type="search"
           value={query}
@@ -91,7 +92,7 @@ export default function Library() {
       </div>
 
       {selection.length > 0 && (
-        <div className="fixed inset-x-0 bottom-[calc(64px+env(safe-area-inset-bottom))] z-10 px-4">
+        <div className="fixed inset-x-0 bottom-[calc(16px+env(safe-area-inset-bottom))] z-10 px-4">
           <button
             onClick={() => navigate('/rutina')}
             className="mx-auto block w-full max-w-lg rounded-2xl bg-accent py-4 text-lg font-bold text-white shadow-lg shadow-black/15"

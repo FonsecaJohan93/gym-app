@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { getExercise } from '../lib/exercises'
 import { formatPct, groupProgress, type GroupProgress } from '../lib/progress'
 import { useAppState } from '../lib/store'
+import { MenuButton, PageTitle } from '../components/Menu'
 import type { Entry } from '../types'
 
 export default function Results() {
@@ -14,8 +15,11 @@ export default function Results() {
 
   if (sessions.length === 0) {
     return (
-      <div className="px-6 pt-16 text-center">
-        <div className="text-5xl">📊</div>
+      <div className="px-6 pt-4 text-center">
+        <div className="text-left">
+          <MenuButton />
+        </div>
+        <div className="mt-8 text-5xl">📊</div>
         <h1 className="mt-4 text-2xl font-bold">Tu progreso</h1>
         <p className="mt-2 text-slate-600">Cuando completes entrenamientos, aquí verás cómo sube tu fuerza por grupo muscular.</p>
         <Link to="/" className="mt-6 inline-block rounded-2xl bg-accent px-6 py-3 font-bold text-white">
@@ -27,8 +31,8 @@ export default function Results() {
 
   return (
     <div className="px-4">
-      <h1 className="pt-8 text-2xl font-bold">Progreso</h1>
-      <p className="text-sm text-slate-600">Fuerza estimada comparada con tu primera vez en cada ejercicio.</p>
+      <PageTitle className="pt-6">Progreso</PageTitle>
+      <p className="pl-10 text-sm text-slate-600">Fuerza estimada comparada con tu primera vez en cada ejercicio.</p>
 
       <section className="mt-4 grid grid-cols-2 gap-3">
         <div className="rounded-2xl bg-panel p-4">

@@ -17,6 +17,7 @@ React 19 + TypeScript + Vite + Tailwind v4 (plugin `@tailwindcss/vite`) + `vite-
 - `src/lib/insights.ts`: regla de reemplazo y sugerencias según el esfuerzo.
 - `src/lib/progress.ts`: fuerza estimada (Epley) y progreso por grupo muscular.
 - `src/lib/split.ts`: reparto de los ejercicios en 1–6 días.
+- `src/components/Menu.tsx`: navegación en panel lateral (`MenuProvider`, `PageTitle` con el botón ☰) y `BottomCTA`, la barra fija para el botón principal. No hay menú inferior.
 - `netlify/functions/auth.mts` (`/api/register`, `/api/login`) y `state.mts` (`/api/state`). El código compartido está en `netlify/lib/auth.mts`.
 
 ## Decisiones del producto (no cambiarlas sin preguntar)

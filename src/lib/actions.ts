@@ -1,6 +1,6 @@
 import { getState, setState } from './store'
 import { historyOf, lastEntry } from './insights'
-import type { Entry, PlanDay } from '../types'
+import type { Draft, Entry, Plan, PlanDay, Session } from '../types'
 
 export function toggleSelection(id: string): void {
   setState((s) => ({
@@ -21,24 +21,84 @@ export function setNextDay(dayIndex: number): void {
   setState((s) => (s.plan ? { ...s, plan: { ...s.plan, nextDay: dayIndex } } : s))
 }
 
+/** Registro nuevo precargado con lo de la última vez: normalmente solo se confirma. */
+function newEntry(sessions: Session[], id: string): Entry {
+  const last = lastEntry(sessions, id)
+  return {
+    exerciseId: id,
+    weight: last?.weight ?? null,
+    sets: last?.sets ?? 3,
+    reps: last?.reps ?? 10,
+    comment: '',
+    effort: null,
+    verdict: null,
+  }
+}
+
+/** Orden de los ejercicios de hoy en el entrenamiento en curso. */
+export function workoutOrder(draft: Draft, plan: Plan): string[] {
+  return draft.order ?? plan.days[draft.dayIndex].exerciseIds
+}
+
 export function startWorkout(dayIndex: number): void {
   const { plan, sessions } = getState()
   if (!plan) return
+  const order = plan.days[dayIndex].exerciseIds
   const entries: Record<string, Entry> = {}
-  for (const id of plan.days[dayIndex].exerciseIds) {
-    // Precargar con lo de la última vez: normalmente solo se confirma
-    const last = lastEntry(sessions, id)
-    entries[id] = {
-      exerciseId: id,
-      weight: last?.weight ?? null,
-      sets: last?.sets ?? 3,
-      reps: last?.reps ?? 10,
-      comment: '',
-      effort: null,
-      verdict: null,
+  for (const id of order) entries[id] = newEntry(sessions, id)
+  setState((s) => ({ ...s, draft: { dayIndex, startedAt: new Date().toISOString(), index: 0, order, entries } }))
+}
+
+/** "Para luego": manda el ejercicio actual al final de la lista de hoy (p. ej. máquina ocupada). */
+export function postponeCurrent(): void {
+  setState((s) => {
+    if (!s.draft || !s.plan) return s
+    const order = [...workoutOrder(s.draft, s.plan)]
+    const [id] = order.splice(s.draft.index, 1)
+    if (!id) return s
+    order.push(id)
+    return { ...s, draft: { ...s.draft, order } }
+  })
+}
+
+/** Agrega un ejercicio a hoy como el siguiente; con `permanent` también al día del plan. */
+export function addToWorkout(id: string, permanent: boolean): void {
+  setState((s) => {
+    if (!s.draft || !s.plan) return s
+    const order = [...workoutOrder(s.draft, s.plan)]
+    if (order.includes(id)) return s
+    const at = Math.min(s.draft.index + (s.draft.index < order.length ? 1 : 0), order.length)
+    order.splice(at, 0, id)
+    const dayIndex = s.draft.dayIndex
+    const plan = permanent
+      ? {
+          ...s.plan,
+          days: s.plan.days.map((d, i) =>
+            i === dayIndex && !d.exerciseIds.includes(id) ? { ...d, exerciseIds: [...d.exerciseIds, id] } : d,
+          ),
+        }
+      : s.plan
+    return {
+      ...s,
+      plan,
+      selection: permanent && !s.selection.includes(id) ? [...s.selection, id] : s.selection,
+      draft: { ...s.draft, order, entries: { ...s.draft.entries, [id]: newEntry(s.sessions, id) } },
     }
-  }
-  setState((s) => ({ ...s, draft: { dayIndex, startedAt: new Date().toISOString(), index: 0, entries } }))
+  })
+}
+
+/** Cambia el ejercicio de hoy por otro; con `permanent` también en la rutina (como aceptar un reemplazo). */
+export function swapInWorkout(fromId: string, toId: string, permanent: boolean): void {
+  setState((s) => {
+    if (!s.draft || !s.plan) return s
+    const order = workoutOrder(s.draft, s.plan).map((id) => (id === fromId ? toId : id))
+    const { [fromId]: _, ...entries } = s.draft.entries
+    return {
+      ...s,
+      draft: { ...s.draft, order, entries: { ...entries, [toId]: newEntry(s.sessions, toId) } },
+    }
+  })
+  if (permanent) acceptSwap(fromId, toId)
 }
 
 export function updateEntry(exerciseId: string, patch: Partial<Entry>): void {
@@ -64,7 +124,7 @@ export function finishWorkout(): void {
   setState((s) => {
     if (!s.draft || !s.plan) return s
     const day = s.plan.days[s.draft.dayIndex]
-    const entries = day.exerciseIds.map((id) => s.draft!.entries[id]).filter(Boolean)
+    const entries = workoutOrder(s.draft, s.plan).map((id) => s.draft!.entries[id]).filter(Boolean)
     return {
       ...s,
       sessions: [

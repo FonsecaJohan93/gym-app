@@ -25,6 +25,11 @@ React 19 + TypeScript + Vite + Tailwind v4 (plugin `@tailwindcss/vite`) + `vite-
 - Después de cada ejercicio hay dos preguntas: esfuerzo (fácil / justo / muy duro), que es opcional y da la pista de peso, y veredicto (útil / no estoy seguro / no me gustó), que es obligatorio para avanzar.
 - Reemplazo: si hay 2 sesiones seguidas con "no me gustó", o 3 seguidas sin "útil", se proponen alternativas del mismo grupo muscular. El usuario aprueba; nunca se cambia automáticamente.
 - Los días van en secuencia rotativa (A/B/C…), no por día de la semana.
+- Durante el entrenamiento, el orden de hoy vive en `draft.order`:
+  - "Para luego" manda el ejercicio actual al final (por ejemplo, máquina ocupada). Solo en el último ejercicio aparece "Hoy no lo hice".
+  - "Cambiar por otro" abre la biblioteca en el mismo grupo muscular, con los recomendados primero.
+  - "Agregar ejercicio" inserta el elegido como el siguiente.
+  - Al cambiar o agregar se pregunta "¿para siempre?": "Solo hoy" no toca el plan; "Sí, siempre" cambia el plan (el cambio usa `acceptSwap`).
 - La seguridad del login es básica a propósito: scrypt + token HMAC de 90 días. Para crear una cuenta se exige el código de invitación de la variable de entorno `INVITE_CODE`.
 
 ## Desarrollo local

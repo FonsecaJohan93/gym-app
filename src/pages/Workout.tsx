@@ -1,12 +1,22 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Navigate, useNavigate } from 'react-router-dom'
 import { getExercise } from '../lib/exercises'
 import { dayLabel } from '../lib/split'
-import { cancelWorkout, finishWorkout, setDraftIndex, updateEntry } from '../lib/actions'
+import {
+  addToWorkout,
+  cancelWorkout,
+  finishWorkout,
+  postponeCurrent,
+  setDraftIndex,
+  swapInWorkout,
+  updateEntry,
+  workoutOrder,
+} from '../lib/actions'
 import { effortHint, lastEntry, relativeDay, EFFORT_LABEL, VERDICT_LABEL } from '../lib/insights'
 import { useAppState } from '../lib/store'
 import { ExerciseImage } from '../components/ExerciseImage'
-import type { Effort, Verdict } from '../types'
+import { ExercisePicker } from '../components/ExercisePicker'
+import type { Effort, Exercise, Verdict } from '../types'
 
 const VERDICTS: { v: Verdict; on: string }[] = [
   { v: 'util', on: 'bg-emerald-500 text-ink border-emerald-500' },
@@ -17,14 +27,18 @@ const VERDICTS: { v: Verdict; on: string }[] = [
 export default function Workout() {
   const { draft, plan, sessions } = useAppState()
   const navigate = useNavigate()
+  const [picker, setPicker] = useState<'add' | 'swap' | null>(null)
+  // Ejercicio elegido en la hoja, esperando "¿para siempre o solo hoy?"
+  const [pending, setPending] = useState<{ kind: 'add' | 'swap'; exercise: Exercise; fromId?: string } | null>(null)
+  const currentId = draft && plan ? workoutOrder(draft, plan)[draft.index] : undefined
   // Cada ejercicio nuevo arranca arriba, con la foto a la vista
   useEffect(() => {
     window.scrollTo(0, 0)
-  }, [draft?.index])
+  }, [draft?.index, currentId])
   if (!draft || !plan) return <Navigate to="/" replace />
 
   const day = plan.days[draft.dayIndex]
-  const ids = day.exerciseIds
+  const ids = workoutOrder(draft, plan)
   const total = ids.length
   const done = draft.index >= total
 
@@ -35,9 +49,58 @@ export default function Workout() {
     }
   }
 
+  const overlays = (
+    <>
+      {picker && (
+        <ExercisePicker
+          title={picker === 'add' ? 'Agregar ejercicio' : 'Cambiar por otro'}
+          replacing={picker === 'swap' && currentId ? getExercise(currentId) : undefined}
+          exclude={ids}
+          onClose={() => setPicker(null)}
+          onPick={(exercise) => {
+            setPending({ kind: picker, exercise, fromId: picker === 'swap' ? currentId : undefined })
+            setPicker(null)
+          }}
+        />
+      )}
+      {pending && (
+        <div className="fixed inset-0 z-40 flex items-end bg-black/60" onClick={() => setPending(null)}>
+          <div className="pb-safe mx-auto w-full max-w-lg rounded-t-3xl bg-panel p-5" onClick={(e) => e.stopPropagation()}>
+            <p className="text-lg font-semibold">
+              {pending.kind === 'add'
+                ? `¿Agregar ${pending.exercise.es} a ${dayLabel(draft.dayIndex)} para siempre?`
+                : `¿Cambiar ${getExercise(pending.fromId!)?.es} por ${pending.exercise.es} en tu rutina para siempre?`}
+            </p>
+            <p className="mt-1 text-sm text-slate-400">
+              {pending.kind === 'add'
+                ? `Si eliges "Solo hoy", queda en el entrenamiento de hoy pero no en ${day.name}.`
+                : 'Si eliges "Solo hoy", la próxima vez vuelve el ejercicio de siempre.'}
+            </p>
+            <div className="mt-4 grid grid-cols-2 gap-2">
+              {[false, true].map((permanent) => (
+                <button
+                  key={String(permanent)}
+                  onClick={() => {
+                    if (pending.kind === 'add') addToWorkout(pending.exercise.id, permanent)
+                    else swapInWorkout(pending.fromId!, pending.exercise.id, permanent)
+                    setPending(null)
+                  }}
+                  className={`rounded-xl py-3.5 font-semibold ${permanent ? 'bg-accent text-ink' : 'border border-line text-slate-200'}`}
+                >
+                  {permanent ? 'Sí, siempre' : 'Solo hoy'}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </>
+  )
+
   if (done) {
     return (
       <div className="px-4">
+        {overlays}
         <h1 className="pt-8 text-3xl font-bold">¡Listo! 💪</h1>
         <p className="text-slate-400">
           {dayLabel(draft.dayIndex)} · {day.name}
@@ -64,6 +127,9 @@ export default function Workout() {
             )
           })}
         </div>
+        <button onClick={() => setPicker('add')} className="mt-3 w-full rounded-xl border border-dashed border-line py-3 text-slate-300">
+          + Agregar otro ejercicio
+        </button>
         <button
           onClick={() => {
             finishWorkout()
@@ -89,6 +155,7 @@ export default function Workout() {
 
   return (
     <div className="pb-safe">
+      {overlays}
       <div className="flex items-center gap-3 px-4 pt-3">
         <button onClick={exit} className="text-2xl text-slate-400" aria-label="Salir">
           ✕
@@ -110,6 +177,14 @@ export default function Workout() {
           {ex.group} · {ex.equipment}
           {ex.secondary.length > 0 && ` · también: ${ex.secondary.join(', ')}`}
         </p>
+        <div className="mt-3 grid grid-cols-2 gap-2 text-sm">
+          <button onClick={() => setPicker('swap')} className="rounded-xl border border-line py-2.5 text-slate-200">
+            🔄 Cambiar por otro
+          </button>
+          <button onClick={() => setPicker('add')} className="rounded-xl border border-line py-2.5 text-slate-200">
+            + Agregar ejercicio
+          </button>
+        </div>
 
         <div className="mt-4 rounded-2xl bg-panel p-3 text-sm">
           {last ? (
@@ -184,15 +259,22 @@ export default function Workout() {
           <button disabled={draft.index === 0} onClick={() => setDraftIndex(draft.index - 1)} className="py-2 disabled:opacity-30">
             ← Anterior
           </button>
-          <button
-            onClick={() => {
-              set({ skipped: true, verdict: null })
-              setDraftIndex(draft.index + 1)
-            }}
-            className="py-2"
-          >
-            Hoy no lo hice →
-          </button>
+          {draft.index < total - 1 ? (
+            // Máquina ocupada: se hace al final
+            <button onClick={postponeCurrent} className="py-2 font-medium text-slate-200">
+              Para luego ⤵
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                set({ skipped: true, verdict: null })
+                setDraftIndex(draft.index + 1)
+              }}
+              className="py-2"
+            >
+              Hoy no lo hice →
+            </button>
+          )}
         </div>
       </div>
     </div>

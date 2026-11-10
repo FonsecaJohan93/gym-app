@@ -56,6 +56,8 @@ export interface Draft {
   dayIndex: number
   startedAt: string
   index: number
+  /** Orden de hoy (cambia con "para luego", agregar o cambiar). Sin él, el orden del día del plan. */
+  order?: string[]
   entries: Record<string, Entry>
 }
 

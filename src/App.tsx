@@ -8,12 +8,13 @@ import History from './pages/History'
 import Results from './pages/Results'
 import Login from './pages/Login'
 import { useCurrentUser } from './lib/store'
+import { HistoryIcon, LibraryIcon, ProgressIcon, TodayIcon } from './components/NavIcons'
 
 const TABS = [
-  { to: '/', label: 'Hoy', icon: '💪' },
-  { to: '/biblioteca', label: 'Biblioteca', icon: '🗄️' },
-  { to: '/progreso', label: 'Progreso', icon: '📈' },
-  { to: '/historial', label: 'Historial', icon: '🗓️' },
+  { to: '/', label: 'Hoy', Icon: TodayIcon },
+  { to: '/biblioteca', label: 'Biblioteca', Icon: LibraryIcon },
+  { to: '/progreso', label: 'Progreso', Icon: ProgressIcon },
+  { to: '/historial', label: 'Historial', Icon: HistoryIcon },
 ]
 
 export default function App() {
@@ -47,12 +48,18 @@ export default function App() {
                 key={t.to}
                 to={t.to}
                 end
-                className={({ isActive }) =>
-                  `flex flex-1 flex-col items-center gap-0.5 py-2.5 text-xs ${isActive ? 'text-accent' : 'text-slate-600'}`
-                }
+                className="flex flex-1 flex-col items-center gap-1 py-2 text-[11px]"
               >
-                <span className="text-xl leading-none">{t.icon}</span>
-                {t.label}
+                {({ isActive }) => (
+                  <>
+                    <span
+                      className={`grid h-8 w-14 place-items-center rounded-full text-accent ${isActive ? 'bg-accent/15' : ''}`}
+                    >
+                      <t.Icon />
+                    </span>
+                    <span className={isActive ? 'font-semibold text-accent' : 'text-slate-600'}>{t.label}</span>
+                  </>
+                )}
               </NavLink>
             ))}
           </div>

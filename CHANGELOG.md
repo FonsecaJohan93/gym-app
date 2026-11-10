@@ -2,6 +2,9 @@
 
 La versión se ve en Historial (abajo) y en la pantalla de inicio de sesión.
 
+## 0.5.1 — 2026-11-10
+- Menú inferior con iconos de línea en verde (pesa, base de datos, gráfica, calendario) en lugar de emojis.
+
 ## 0.5.0 — 2026-11-10
 - Tema claro: fondo gris claro, tarjetas blancas y un verde más oscuro que se lee bien sobre blanco.
 

@@ -3,6 +3,7 @@ import { getExercise } from '../lib/exercises'
 import { dayLabel } from '../lib/split'
 import { deleteSession } from '../lib/actions'
 import { relativeDay, EFFORT_LABEL, VERDICT_LABEL } from '../lib/insights'
+import { APP_VERSION } from '../lib/version'
 import { exportBackup, importBackup, signOut, useAppState, useCurrentUser, useSyncStatus } from '../lib/store'
 
 export default function History() {
@@ -118,6 +119,8 @@ export default function History() {
           />
         </div>
       </section>
+
+      <p className="mb-6 text-center text-xs text-slate-500">Gym {APP_VERSION}</p>
     </div>
   )
 }

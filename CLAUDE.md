@@ -47,4 +47,5 @@ Antes de hacer push, corre `npm run build`: incluye `tsc -b` y debe terminar sin
 
 - **No agregues `Co-Authored-By` ni otras líneas de coautoría en los commits** (lo pidió el dueño).
 - El repositorio es **público** a propósito: con el plan gratis de Netlify, los repositorios privados bloqueaban el build ("Unrecognized Git contributor"). Tiene un aviso de todos los derechos reservados (`LICENSE`). Nunca subas secretos: `AUTH_SECRET` e `INVITE_CODE` viven solo en las variables de entorno de Netlify.
+- **Versión:** con cada cambio visible para el usuario, sube `version` en `package.json` y agrega una entrada en `CHANGELOG.md`. Usa minor (0.5.0) para funciones nuevas y patch (0.4.1) para ajustes o arreglos. La app muestra `vX.Y.Z · commit` en Historial y en el login (`src/lib/version.ts`).
 - Los cambios se publican al hacer push a `main`. Si trabajas en otra rama, haz merge a `main` cuando el usuario lo pida.

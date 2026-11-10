@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { login, register } from '../lib/api'
 import { openSession } from '../lib/store'
+import { APP_VERSION } from '../lib/version'
 
 export default function Login() {
   const [mode, setMode] = useState<'login' | 'register'>('login')
@@ -86,6 +87,7 @@ export default function Login() {
       {mode === 'register' && (
         <p className="mt-4 text-center text-xs text-slate-500">Pídele el código de invitación a quien te compartió la app.</p>
       )}
+      <p className="mt-10 text-center text-xs text-slate-600">{APP_VERSION}</p>
     </div>
   )
 }

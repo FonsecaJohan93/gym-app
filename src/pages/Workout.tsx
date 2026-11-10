@@ -12,7 +12,7 @@ import {
   updateEntry,
   workoutOrder,
 } from '../lib/actions'
-import { effortHint, lastEntry, relativeDay, EFFORT_LABEL, VERDICT_LABEL } from '../lib/insights'
+import { addRecommendations, effortHint, lastEntry, relativeDay, EFFORT_LABEL, VERDICT_LABEL } from '../lib/insights'
 import { useAppState } from '../lib/store'
 import { ExerciseImage } from '../components/ExerciseImage'
 import { ExercisePicker } from '../components/ExercisePicker'
@@ -25,7 +25,8 @@ const VERDICTS: { v: Verdict; on: string }[] = [
 ]
 
 export default function Workout() {
-  const { draft, plan, sessions } = useAppState()
+  const state = useAppState()
+  const { draft, plan, sessions } = state
   const navigate = useNavigate()
   const [picker, setPicker] = useState<'add' | 'swap' | null>(null)
   // Ejercicio elegido en la hoja, esperando "¿para siempre o solo hoy?"
@@ -55,6 +56,7 @@ export default function Workout() {
         <ExercisePicker
           title={picker === 'add' ? 'Agregar ejercicio' : 'Cambiar por otro'}
           replacing={picker === 'swap' && currentId ? getExercise(currentId) : undefined}
+          recommendations={picker === 'add' ? addRecommendations(state, ids) : undefined}
           exclude={ids}
           onClose={() => setPicker(null)}
           onPick={(exercise) => {

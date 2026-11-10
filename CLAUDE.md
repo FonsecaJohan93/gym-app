@@ -30,6 +30,7 @@ React 19 + TypeScript + Vite + Tailwind v4 (plugin `@tailwindcss/vite`) + `vite-
   - "Para luego" manda el ejercicio actual al final (por ejemplo, máquina ocupada). Solo en el último ejercicio aparece "Hoy no lo hice".
   - "Cambiar por otro" abre la biblioteca en el mismo grupo muscular, con los recomendados primero.
   - "Agregar ejercicio" inserta el elegido como el siguiente.
+  - Arriba muestra 3 recomendados (`addRecommendations` en `insights.ts`). El puntaje considera: el grupo con menos ejercicios hoy, músculos que la rutina no cubre, músculos sin trabajar en 7 días o más, el historial (útil > nunca probado > no me gustó), el mismo equipo y menos peso a nivel experto. Penaliza repetir grupo. No se le hacen preguntas nuevas al usuario (decisión del dueño).
   - Al cambiar o agregar se pregunta "¿para siempre?": "Solo hoy" no toca el plan; "Sí, siempre" cambia el plan (el cambio usa `acceptSwap`).
 - La seguridad del login es básica a propósito: scrypt + token HMAC de 90 días. Para crear una cuenta se exige el código de invitación de la variable de entorno `INVITE_CODE`.
 

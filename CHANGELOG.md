@@ -2,6 +2,9 @@
 
 La versión se ve en Historial (abajo) y en la pantalla de inicio de sesión.
 
+## 0.7.0 — 2026-11-10
+- "Agregar ejercicio" muestra 3 recomendados para hoy, cada uno con su razón: lo que le falta al día, músculos que no trabajas hace días, tu historial (útil o nunca probado) y el mismo tipo de equipo.
+
 ## 0.6.0 — 2026-11-10
 - Navegación en panel lateral: botón ☰ junto al título de cada pantalla. Se quitó el menú inferior; abajo solo queda el botón principal (Empezar, Armar rutina, Guardar rutina).
 

@@ -102,3 +102,91 @@ export function relativeDay(iso: string): string {
 
 export const VERDICT_LABEL = { util: '👍 Útil', nose: '🤔 No estoy seguro', no: '👎 No me gustó' } as const
 export const EFFORT_LABEL = { facil: 'Fácil', justo: 'Justo', duro: 'Muy duro' } as const
+
+export interface Recommendation {
+  exercise: Exercise
+  reason: string
+}
+
+const daysSince = (iso: string) => Math.floor((Date.now() - new Date(iso).getTime()) / 86_400_000)
+
+/**
+ * Recomendaciones para agregar un ejercicio al entrenamiento de hoy. Puntaje con:
+ * 1. Lo que le falta al día: el grupo con menos ejercicios hoy y músculos que nada de la rutina trabaja.
+ * 2. La semana: músculos que llevas más días sin trabajar.
+ * 3. Tu historial: primero los que marcaste útiles, luego los nunca probados; abajo los que no te gustaron.
+ * 4. Que sea práctico: mismo tipo de equipo que hoy y menos peso a los de nivel experto.
+ * Cada recomendación trae la razón que más pesó.
+ */
+export function addRecommendations(state: AppState, todayIds: string[], limit = 3): Recommendation[] {
+  const today = todayIds.map(getExercise).filter((e): e is Exercise => !!e)
+  const groups = new Set(today.map((e) => e.group))
+  const perGroup = new Map<string, number>()
+  for (const e of today) perGroup.set(e.group, (perGroup.get(e.group) ?? 0) + 1)
+  const maxPerGroup = Math.max(0, ...perGroup.values())
+  const equipmentToday = new Set(today.map((e) => e.equipment))
+
+  // Músculos que trabaja la rutina completa (principales y secundarios)
+  const planIds = new Set([...(state.plan?.days.flatMap((d) => d.exerciseIds) ?? []), ...todayIds])
+  const covered = new Set(
+    [...planIds].flatMap((id) => {
+      const e = getExercise(id)
+      return e ? [...e.muscles, ...e.secondary] : []
+    }),
+  )
+
+  // Última vez que se trabajó cada músculo como principal
+  const lastByMuscle = new Map<string, string>()
+  for (const s of state.sessions)
+    for (const en of s.entries) {
+      if (en.skipped) continue
+      for (const m of getExercise(en.exerciseId)?.muscles ?? [])
+        if ((lastByMuscle.get(m) ?? '') < s.date) lastByMuscle.set(m, s.date)
+    }
+
+  const skip = planIds // hoy y lo que ya está en otro día de la rutina
+  const scored = EXERCISES.filter((c) => !skip.has(c.id) && (groups.size === 0 || groups.has(c.group))).map((c) => {
+    const reasons: [number, string][] = []
+
+    const gap = maxPerGroup - (perGroup.get(c.group) ?? 0)
+    if (gap > 0) {
+      const n = perGroup.get(c.group) ?? 0
+      reasons.push([gap * 1.5, n === 0 ? `Hoy no tienes nada de ${c.group.toLowerCase()}` : `Hoy solo tienes ${n} de ${c.group.toLowerCase()}`])
+    }
+
+    const uncovered = c.muscles.find((m) => !covered.has(m))
+    if (uncovered) reasons.push([2, `Nada en tu rutina trabaja ${uncovered}`])
+
+    const lastDates = c.muscles.map((m) => lastByMuscle.get(m))
+    if (state.sessions.length > 0) {
+      if (lastDates.every((d) => !d)) reasons.push([1.5, `Aún no has trabajado ${c.muscles[0]}`])
+      else {
+        const days = Math.min(...lastDates.filter((d): d is string => !!d).map(daysSince))
+        if (days >= 7) reasons.push([1.5, `No trabajas ${c.muscles[0]} desde hace ${days} días`])
+      }
+    }
+
+    const last = lastEntry(state.sessions, c.id)
+    if (last?.verdict === 'util') reasons.push([2, 'Lo marcaste como útil'])
+    else if (!last) reasons.push([1, 'Nunca lo has probado'])
+    else if (last.verdict === 'no') reasons.push([-3, ''])
+
+    if (equipmentToday.has(c.equipment)) reasons.push([0.5, `Usa ${c.equipment.toLowerCase()}, como lo de hoy`])
+    if (c.level === 'expert') reasons.push([-1, ''])
+
+    const score = reasons.reduce((a, [w]) => a + w, 0)
+    const best = reasons.filter(([, r]) => r).sort((a, b) => b[0] - a[0])[0]
+    return { exercise: c, score, reason: best?.[1] ?? '' }
+  })
+
+  // Elegir de a uno, castigando repetir grupo para que no salgan 3 de lo mismo
+  const picked: Recommendation[] = []
+  const pool = [...scored]
+  while (picked.length < limit && pool.length) {
+    const penalty = (g: string) => picked.filter((p) => p.exercise.group === g).length * 1.5
+    pool.sort((a, b) => b.score - penalty(b.exercise.group) - (a.score - penalty(a.exercise.group)))
+    const { exercise, reason } = pool.shift()!
+    picked.push({ exercise, reason })
+  }
+  return picked
+}

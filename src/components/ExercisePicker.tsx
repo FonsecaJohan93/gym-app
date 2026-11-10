@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react'
 import { EXERCISES, GROUPS } from '../lib/exercises'
-import { candidatesFor } from '../lib/insights'
+import { candidatesFor, type Recommendation } from '../lib/insights'
 import { useAppState } from '../lib/store'
 import { ExerciseImage } from './ExerciseImage'
 import type { Exercise } from '../types'
@@ -14,12 +14,15 @@ const normalize = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLo
 export function ExercisePicker({
   title,
   replacing,
+  recommendations = [],
   exclude,
   onPick,
   onClose,
 }: {
   title: string
   replacing?: Exercise
+  /** Sugerencias con su razón; se muestran arriba mientras no se busque ni filtre */
+  recommendations?: Recommendation[]
   exclude: string[]
   onPick: (e: Exercise) => void
   onClose: () => void
@@ -74,6 +77,30 @@ export function ExercisePicker({
       </header>
 
       <div className="pb-safe mx-auto w-full max-w-lg flex-1 space-y-2 overflow-y-auto px-4 pb-6">
+        {recommendations.length > 0 && !query && !group && (
+          <section className="mb-4 rounded-2xl bg-accent/10 p-3">
+            <h3 className="px-1 text-sm font-semibold text-accent">★ Recomendado para hoy</h3>
+            <div className="mt-2 space-y-2">
+              {recommendations.map(({ exercise: e, reason }) => (
+                <button
+                  key={e.id}
+                  onClick={() => onPick(e)}
+                  className="flex w-full items-center gap-3 rounded-xl bg-panel p-2 text-left active:scale-[0.99]"
+                >
+                  <ExerciseImage id={e.id} className="h-16 w-16 shrink-0 rounded-lg" />
+                  <div className="min-w-0 flex-1">
+                    <div className="leading-tight font-semibold">{e.es}</div>
+                    <div className="mt-0.5 text-xs text-slate-600">
+                      {e.group} · {e.equipment}
+                    </div>
+                    {reason && <div className="mt-0.5 text-xs font-medium text-accent">{reason}</div>}
+                  </div>
+                </button>
+              ))}
+            </div>
+            <h3 className="mt-4 px-1 text-sm font-semibold text-slate-600">Toda la biblioteca</h3>
+          </section>
+        )}
         {list.length === 0 && <p className="py-10 text-center text-slate-600">Sin resultados.</p>}
         {list.map((e) => {
           const recommended = (rank.get(e.id) ?? 999) < 3

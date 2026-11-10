@@ -48,7 +48,7 @@ export default function App() {
                 to={t.to}
                 end
                 className={({ isActive }) =>
-                  `flex flex-1 flex-col items-center gap-0.5 py-2.5 text-xs ${isActive ? 'text-accent' : 'text-slate-400'}`
+                  `flex flex-1 flex-col items-center gap-0.5 py-2.5 text-xs ${isActive ? 'text-accent' : 'text-slate-600'}`
                 }
               >
                 <span className="text-xl leading-none">{t.icon}</span>

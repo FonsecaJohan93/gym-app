@@ -17,8 +17,8 @@ export default function Results() {
       <div className="px-6 pt-16 text-center">
         <div className="text-5xl">📊</div>
         <h1 className="mt-4 text-2xl font-bold">Tu progreso</h1>
-        <p className="mt-2 text-slate-400">Cuando completes entrenamientos, aquí verás cómo sube tu fuerza por grupo muscular.</p>
-        <Link to="/" className="mt-6 inline-block rounded-2xl bg-accent px-6 py-3 font-bold text-ink">
+        <p className="mt-2 text-slate-600">Cuando completes entrenamientos, aquí verás cómo sube tu fuerza por grupo muscular.</p>
+        <Link to="/" className="mt-6 inline-block rounded-2xl bg-accent px-6 py-3 font-bold text-white">
           Ir a entrenar
         </Link>
       </div>
@@ -28,19 +28,19 @@ export default function Results() {
   return (
     <div className="px-4">
       <h1 className="pt-8 text-2xl font-bold">Progreso</h1>
-      <p className="text-sm text-slate-400">Fuerza estimada comparada con tu primera vez en cada ejercicio.</p>
+      <p className="text-sm text-slate-600">Fuerza estimada comparada con tu primera vez en cada ejercicio.</p>
 
       <section className="mt-4 grid grid-cols-2 gap-3">
         <div className="rounded-2xl bg-panel p-4">
-          <div className="text-xs text-slate-400">Fuerza general</div>
+          <div className="text-xs text-slate-600">Fuerza general</div>
           <div className="mt-1 text-3xl font-bold">{overall != null ? formatPct(overall) : '—'}</div>
           <div className="text-xs text-slate-500">promedio de grupos</div>
         </div>
         <div className="rounded-2xl bg-panel p-4">
-          <div className="text-xs text-slate-400">Subiendo este mes</div>
+          <div className="text-xs text-slate-600">Subiendo este mes</div>
           <div className="mt-1 text-3xl font-bold">
             {improving}
-            <span className="text-lg font-semibold text-slate-400">/{withData.length}</span>
+            <span className="text-lg font-semibold text-slate-600">/{withData.length}</span>
           </div>
           <div className="text-xs text-slate-500">grupos musculares</div>
         </div>
@@ -72,13 +72,13 @@ function GroupCard({ g }: { g: GroupProgress }) {
           <h2 className="text-lg font-bold">{g.group}</h2>
           <span className="text-2xl font-bold tabular-nums">{g.current != null ? formatPct(g.current) : '—'}</span>
         </div>
-        <div className="flex items-center justify-between text-xs text-slate-400">
+        <div className="flex items-center justify-between text-xs text-slate-600">
           <span>
             {g.sessions} entrenamiento{g.sessions === 1 ? '' : 's'} · {g.exercises.length} ejercicio{g.exercises.length === 1 ? '' : 's'}
           </span>
           {trend && (
             <span>
-              <span className={trend === 'up' ? 'text-emerald-400' : trend === 'down' ? 'text-rose-400' : 'text-slate-500'}>
+              <span className={trend === 'up' ? 'text-emerald-600' : trend === 'down' ? 'text-rose-600' : 'text-slate-500'}>
                 {trend === 'up' ? '▲' : trend === 'down' ? '▼' : '■'}
               </span>{' '}
               {trend === 'flat' ? 'estable' : formatPct(g.change4w!)} últimas 4 sem.
@@ -153,7 +153,7 @@ function Sparkline({ weeks }: { weeks: { week: string; pct: number }[] }) {
       </svg>
       <div className="mt-1 flex justify-between text-[11px] text-slate-500">
         <span>{label(weeks[0].week)}</span>
-        <span className="text-slate-300">
+        <span className="text-slate-700">
           Semana del {label(weeks[active].week)}: <b className="tabular-nums">{formatPct(weeks[active].pct)}</b>
         </span>
       </div>

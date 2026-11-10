@@ -1,10 +1,12 @@
 @import 'tailwindcss';
 
+/* Tema claro. El verde de marca es más oscuro que el lima original para que
+   se lea sobre blanco (contraste ≥ 4.5 con texto blanco y sobre el fondo). */
 @theme {
-  --color-accent: #a3e635;
-  --color-ink: #0b1120;
-  --color-panel: #141c2f;
-  --color-line: #24304a;
+  --color-accent: #3a7d14;
+  --color-ink: #f4f6f2; /* fondo de la página */
+  --color-panel: #ffffff; /* tarjetas */
+  --color-line: #dfe4da; /* bordes */
 }
 
 html,
@@ -16,7 +18,7 @@ body,
 body {
   margin: 0;
   background: var(--color-ink);
-  color: #e5e7eb;
+  color: #1e293b;
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
@@ -33,4 +35,9 @@ body {
 
 .pb-safe {
   padding-bottom: env(safe-area-inset-bottom);
+}
+
+/* Las tarjetas blancas necesitan un borde suave para separarse del fondo */
+.bg-panel {
+  box-shadow: 0 0 0 1px var(--color-line), 0 1px 2px rgb(15 23 42 / 0.04);
 }

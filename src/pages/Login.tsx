@@ -31,7 +31,7 @@ export default function Login() {
     <div className="mx-auto min-h-dvh max-w-sm px-6 pt-16">
       <img src="/pwa-192x192.png" alt="" className="mx-auto h-20 w-20 rounded-2xl" />
       <h1 className="mt-5 text-center text-3xl font-bold">Gym</h1>
-      <p className="mt-1 text-center text-slate-400">Tu rutina, a tu medida</p>
+      <p className="mt-1 text-center text-slate-600">Tu rutina, a tu medida</p>
 
       <div className="mt-8 grid grid-cols-2 rounded-xl bg-panel p-1">
         {(['login', 'register'] as const).map((m) => (
@@ -41,7 +41,7 @@ export default function Login() {
               setMode(m)
               setError(null)
             }}
-            className={`rounded-lg py-2.5 font-semibold ${mode === m ? 'bg-accent text-ink' : 'text-slate-400'}`}
+            className={`rounded-lg py-2.5 font-semibold ${mode === m ? 'bg-accent text-white' : 'text-slate-600'}`}
           >
             {m === 'login' ? 'Entrar' : 'Crear cuenta'}
           </button>
@@ -79,15 +79,15 @@ export default function Login() {
             className={input}
           />
         )}
-        {error && <p className="rounded-xl bg-rose-500/15 px-4 py-3 text-sm text-rose-300">{error}</p>}
-        <button disabled={busy} className="w-full rounded-2xl bg-accent py-4 text-lg font-bold text-ink disabled:opacity-60">
+        {error && <p className="rounded-xl bg-rose-500/15 px-4 py-3 text-sm text-rose-700">{error}</p>}
+        <button disabled={busy} className="w-full rounded-2xl bg-accent py-4 text-lg font-bold text-white disabled:opacity-60">
           {busy ? 'Un momento…' : mode === 'login' ? 'Entrar' : 'Crear cuenta'}
         </button>
       </form>
       {mode === 'register' && (
         <p className="mt-4 text-center text-xs text-slate-500">Pídele el código de invitación a quien te compartió la app.</p>
       )}
-      <p className="mt-10 text-center text-xs text-slate-600">{APP_VERSION}</p>
+      <p className="mt-10 text-center text-xs text-slate-400">{APP_VERSION}</p>
     </div>
   )
 }

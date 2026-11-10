@@ -18,8 +18,8 @@ export default function PlanBuilder() {
   if (selection.length === 0) {
     return (
       <div className="p-6 pt-12 text-center">
-        <p className="text-slate-300">Primero elige ejercicios en la biblioteca.</p>
-        <Link to="/biblioteca" className="mt-4 inline-block rounded-xl bg-accent px-5 py-3 font-bold text-ink">
+        <p className="text-slate-700">Primero elige ejercicios en la biblioteca.</p>
+        <Link to="/biblioteca" className="mt-4 inline-block rounded-xl bg-accent px-5 py-3 font-bold text-white">
           Ir a la biblioteca
         </Link>
       </div>
@@ -46,7 +46,7 @@ export default function PlanBuilder() {
   return (
     <div className="px-4">
       <header>
-        <Link to="/biblioteca" className="mt-4 inline-block text-sm text-slate-400">
+        <Link to="/biblioteca" className="mt-4 inline-block text-sm text-slate-600">
           ← Biblioteca
         </Link>
         <h1 className="mt-2 text-2xl font-bold">Tu rutina</h1>
@@ -59,19 +59,19 @@ export default function PlanBuilder() {
             <button
               key={n}
               onClick={() => setDays(n)}
-              className={`rounded-xl py-3 text-lg font-bold ${n === days ? 'bg-accent text-ink' : 'bg-panel text-slate-300'}`}
+              className={`rounded-xl py-3 text-lg font-bold ${n === days ? 'bg-accent text-white' : 'bg-panel text-slate-700'}`}
             >
               {n}
             </button>
           ))}
         </div>
-        <p className="mt-2 text-sm text-slate-400">
+        <p className="mt-2 text-sm text-slate-600">
           Los días van en orden (A, B, C…): si faltas un día, simplemente sigue el que toca.
         </p>
       </section>
 
       {empty > 0 && (
-        <p className="mt-4 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-sm text-amber-200">
+        <p className="mt-4 rounded-xl border border-amber-500/40 bg-amber-500/10 p-3 text-sm text-amber-800">
           {empty === 1 ? 'Un día quedó' : `${empty} días quedaron`} sin ejercicios. Puedes mover ejercicios con el
           selector de cada uno, elegir más en la biblioteca o usar menos días.
         </p>
@@ -86,7 +86,7 @@ export default function PlanBuilder() {
             {d.exerciseIds.length === 0 && <p className="mt-2 text-sm text-slate-500">Sin ejercicios</p>}
             {groupIds(d.exerciseIds).map(([g, ids]) => (
               <div key={g} className="mt-3">
-                <div className="text-xs font-semibold tracking-wide text-slate-400 uppercase">{g}</div>
+                <div className="text-xs font-semibold tracking-wide text-slate-600 uppercase">{g}</div>
                 {ids.map((id) => {
                   const e = getExercise(id)!
                   return (
@@ -119,7 +119,7 @@ export default function PlanBuilder() {
         ))}
       </div>
 
-      <button onClick={save} className="mt-6 mb-8 w-full rounded-2xl bg-accent py-4 text-lg font-bold text-ink">
+      <button onClick={save} className="mt-6 mb-8 w-full rounded-2xl bg-accent py-4 text-lg font-bold text-white">
         Guardar rutina
       </button>
     </div>

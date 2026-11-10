@@ -31,7 +31,7 @@ export default function Library() {
     <div>
       <header className="sticky top-0 z-10 bg-ink/95 px-4 pb-3 backdrop-blur">
         <h1 className="pt-4 text-2xl font-bold">Biblioteca</h1>
-        <p className="text-sm text-slate-400">Toca los ejercicios que quieres en tu rutina.</p>
+        <p className="text-sm text-slate-600">Toca los ejercicios que quieres en tu rutina.</p>
         <input
           type="search"
           value={query}
@@ -72,14 +72,14 @@ export default function Library() {
               <div className="relative">
                 <ExerciseImage id={e.id} className="aspect-[4/3]" />
                 {on && (
-                  <span className="absolute top-2 right-2 grid h-7 w-7 place-items-center rounded-full bg-accent font-bold text-ink">
+                  <span className="absolute top-2 right-2 grid h-7 w-7 place-items-center rounded-full bg-accent font-bold text-white">
                     ✓
                   </span>
                 )}
               </div>
               <div className="p-2.5">
                 <div className="text-[15px] leading-tight font-semibold">{e.es}</div>
-                <div className="mt-0.5 text-xs leading-tight text-slate-400">{e.en}</div>
+                <div className="mt-0.5 text-xs leading-tight text-slate-600">{e.en}</div>
                 <div className="mt-1.5 text-[11px] text-slate-500">
                   {e.group} · {e.equipment}
                 </div>
@@ -87,14 +87,14 @@ export default function Library() {
             </button>
           )
         })}
-        {list.length === 0 && <p className="col-span-2 py-10 text-center text-slate-400">Sin resultados.</p>}
+        {list.length === 0 && <p className="col-span-2 py-10 text-center text-slate-600">Sin resultados.</p>}
       </div>
 
       {selection.length > 0 && (
         <div className="fixed inset-x-0 bottom-[calc(64px+env(safe-area-inset-bottom))] z-10 px-4">
           <button
             onClick={() => navigate('/rutina')}
-            className="mx-auto block w-full max-w-lg rounded-2xl bg-accent py-4 text-lg font-bold text-ink shadow-lg shadow-black/40"
+            className="mx-auto block w-full max-w-lg rounded-2xl bg-accent py-4 text-lg font-bold text-white shadow-lg shadow-black/15"
           >
             Armar rutina con {selection.length} ejercicio{selection.length === 1 ? '' : 's'} →
           </button>
@@ -110,7 +110,7 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
     <button
       onClick={onClick}
       className={`shrink-0 rounded-full border px-3.5 py-1.5 text-sm whitespace-nowrap ${
-        active ? 'border-accent bg-accent/15 text-accent' : 'border-line text-slate-300'
+        active ? 'border-accent bg-accent/15 text-accent' : 'border-line text-slate-700'
       }`}
     >
       {children}

@@ -26,7 +26,7 @@ export default function History() {
   return (
     <div className="px-4">
       <h1 className="pt-8 text-2xl font-bold">Historial</h1>
-      <p className="text-sm text-slate-400">
+      <p className="text-sm text-slate-600">
         {sessions.length} entrenamiento{sessions.length === 1 ? '' : 's'}
         {swaps.length > 0 && ` · ${swaps.length} cambio${swaps.length === 1 ? '' : 's'} de ejercicio`}
       </p>
@@ -40,7 +40,7 @@ export default function History() {
                 <div className="font-semibold">
                   {dayLabel(s.dayIndex)} · {s.dayName}
                 </div>
-                <div className="text-sm text-slate-400">
+                <div className="text-sm text-slate-600">
                   {relativeDay(s.date)} · {new Date(s.date).toLocaleDateString('es', { weekday: 'long', day: 'numeric', month: 'long' })}
                 </div>
               </div>
@@ -55,19 +55,19 @@ export default function History() {
                 {s.entries.map((e) => (
                   <div key={e.exerciseId} className="py-2">
                     <div className="font-medium">{getExercise(e.exerciseId)?.es ?? e.exerciseId}</div>
-                    <div className="text-sm text-slate-400">
+                    <div className="text-sm text-slate-600">
                       {e.skipped
                         ? 'Saltado'
                         : `${e.weight != null ? `${e.weight} kg · ` : ''}${e.sets}×${e.reps}${e.effort ? ` · ${EFFORT_LABEL[e.effort]}` : ''}${
                             e.verdict ? ` · ${VERDICT_LABEL[e.verdict]}` : ''
                           }`}
                     </div>
-                    {e.comment && <div className="text-sm text-slate-300 italic">“{e.comment}”</div>}
+                    {e.comment && <div className="text-sm text-slate-700 italic">“{e.comment}”</div>}
                   </div>
                 ))}
                 <button
                   onClick={() => confirm('¿Borrar este entrenamiento del historial?') && deleteSession(s.id)}
-                  className="mt-2 text-sm text-rose-400"
+                  className="mt-2 text-sm text-rose-600"
                 >
                   Borrar entrenamiento
                 </button>
@@ -81,14 +81,14 @@ export default function History() {
         <div className="flex items-center justify-between">
           <div>
             <h2 className="font-semibold">Cuenta</h2>
-            <p className="text-sm text-slate-400">
+            <p className="text-sm text-slate-600">
               {user} ·{' '}
               {sync === 'offline' ? 'sin conexión, se guardará al volver' : sync === 'saving' ? 'guardando…' : 'guardado en la nube'}
             </p>
           </div>
           <button
             onClick={() => confirm('¿Cerrar sesión en este celular?') && signOut()}
-            className="rounded-xl border border-line px-4 py-2 text-sm text-slate-300"
+            className="rounded-xl border border-line px-4 py-2 text-sm text-slate-700"
           >
             Salir
           </button>
@@ -97,7 +97,7 @@ export default function History() {
 
       <section className="mt-3 mb-4 rounded-2xl border border-line p-4">
         <h2 className="font-semibold">Respaldo</h2>
-        <p className="mt-1 text-sm text-slate-400">
+        <p className="mt-1 text-sm text-slate-600">
           Tus datos se guardan en tu cuenta. Si quieres, también puedes descargar una copia.
         </p>
         <div className="mt-3 flex gap-2">

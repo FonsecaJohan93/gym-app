@@ -17,11 +17,11 @@ export default function Home() {
       <div className="px-6 pt-16 text-center">
         <div className="text-6xl">🏋️</div>
         <h1 className="mt-4 text-3xl font-bold">Tu rutina, a tu medida</h1>
-        <p className="mt-3 text-slate-400">
+        <p className="mt-3 text-slate-600">
           Elige tus ejercicios, dinos cuántos días vas, y después de cada ejercicio cuéntanos qué tal te pareció. Si algo
           no te funciona, te proponemos otro del mismo grupo muscular.
         </p>
-        <Link to="/biblioteca" className="mt-8 inline-block rounded-2xl bg-accent px-6 py-4 text-lg font-bold text-ink">
+        <Link to="/biblioteca" className="mt-8 inline-block rounded-2xl bg-accent px-6 py-4 text-lg font-bold text-white">
           Elegir ejercicios
         </Link>
       </div>
@@ -41,13 +41,13 @@ export default function Home() {
   return (
     <div className="px-4">
       <header className="pt-4">
-        <p className="pt-4 text-sm text-slate-400">
+        <p className="pt-4 text-sm text-slate-600">
           {lastSession ? `Último entrenamiento: ${relativeDay(lastSession.date)} (${lastSession.dayName})` : 'Aún no has entrenado'}
         </p>
         <h1 className="text-3xl font-bold">
           Hoy toca <span className="text-accent">{dayLabel(dayIndex)}</span>
         </h1>
-        <p className="text-lg text-slate-300">{day.name}</p>
+        <p className="text-lg text-slate-700">{day.name}</p>
       </header>
 
       {plan.days.length > 1 && (
@@ -58,7 +58,7 @@ export default function Home() {
               disabled={!!draft}
               onClick={() => setNextDay(i)}
               className={`shrink-0 rounded-full border px-3.5 py-1.5 text-sm ${
-                i === dayIndex ? 'border-accent bg-accent/15 text-accent' : 'border-line text-slate-300 disabled:opacity-40'
+                i === dayIndex ? 'border-accent bg-accent/15 text-accent' : 'border-line text-slate-700 disabled:opacity-40'
               }`}
             >
               {dayLabel(i)} · {d.name}
@@ -76,10 +76,10 @@ export default function Home() {
       )}
 
       <section className="mt-5 rounded-2xl bg-panel p-4">
-        {day.exerciseIds.length === 0 && <p className="text-slate-400">Este día no tiene ejercicios.</p>}
+        {day.exerciseIds.length === 0 && <p className="text-slate-600">Este día no tiene ejercicios.</p>}
         {groupIds(day.exerciseIds).map(([g, ids]) => (
           <div key={g} className="mb-3 last:mb-0">
-            <div className="text-xs font-semibold tracking-wide text-slate-400 uppercase">{g}</div>
+            <div className="text-xs font-semibold tracking-wide text-slate-600 uppercase">{g}</div>
             {ids.map((id) => {
               const e = getExercise(id)!
               const last = lastEntry(sessions, id)
@@ -104,12 +104,12 @@ export default function Home() {
       </section>
 
       {day.exerciseIds.length > 0 && (
-        <button onClick={start} className="mt-5 w-full rounded-2xl bg-accent py-4 text-xl font-bold text-ink">
+        <button onClick={start} className="mt-5 w-full rounded-2xl bg-accent py-4 text-xl font-bold text-white">
           {draft ? 'Continuar entrenamiento' : 'Empezar'}
         </button>
       )}
 
-      <div className="mt-6 mb-4 flex justify-center gap-6 text-sm text-slate-400">
+      <div className="mt-6 mb-4 flex justify-center gap-6 text-sm text-slate-600">
         <Link to="/biblioteca">Editar ejercicios</Link>
         <Link to="/rutina">Cambiar días</Link>
       </div>
@@ -127,7 +127,7 @@ function ProposalCard({ proposal }: { proposal: Proposal }) {
 
   return (
     <div className="rounded-2xl border border-amber-500/40 bg-amber-500/10 p-4">
-      <p className="text-sm text-amber-200">
+      <p className="text-sm text-amber-800">
         {reason === 'no'
           ? 'Las últimas 2 veces marcaste que no te gustó'
           : 'Las últimas 3 veces no lo marcaste como útil'}
@@ -135,17 +135,17 @@ function ProposalCard({ proposal }: { proposal: Proposal }) {
       <p className="mt-0.5 text-lg font-semibold">{exercise.es}</p>
       {!open ? (
         <div className="mt-3 flex gap-2">
-          <button onClick={() => setOpen(true)} className="flex-1 rounded-xl bg-amber-400 py-2.5 font-semibold text-ink">
+          <button onClick={() => setOpen(true)} className="flex-1 rounded-xl bg-amber-400 py-2.5 font-semibold text-slate-900">
             Ver alternativas
           </button>
-          <button onClick={() => dismissProposal(exercise.id)} className="rounded-xl border border-line px-4 py-2.5 text-slate-300">
+          <button onClick={() => dismissProposal(exercise.id)} className="rounded-xl border border-line px-4 py-2.5 text-slate-700">
             Mantener
           </button>
         </div>
       ) : (
         <div className="mt-3 space-y-2">
-          <p className="text-sm text-slate-300">Otros ejercicios de {exercise.group.toLowerCase()}:</p>
-          {candidates.length === 0 && <p className="text-sm text-slate-400">No hay más ejercicios de este grupo.</p>}
+          <p className="text-sm text-slate-700">Otros ejercicios de {exercise.group.toLowerCase()}:</p>
+          {candidates.length === 0 && <p className="text-sm text-slate-600">No hay más ejercicios de este grupo.</p>}
           {shown.map((c) => {
             const last = lastEntry(state.sessions, c.id)
             return (
@@ -168,11 +168,11 @@ function ProposalCard({ proposal }: { proposal: Proposal }) {
           })}
           <div className="flex gap-4 pt-1 text-sm">
             {!showAll && candidates.length > 3 && (
-              <button onClick={() => setShowAll(true)} className="text-slate-300">
+              <button onClick={() => setShowAll(true)} className="text-slate-700">
                 Ver todos ({candidates.length})
               </button>
             )}
-            <button onClick={() => dismissProposal(exercise.id)} className="text-slate-400">
+            <button onClick={() => dismissProposal(exercise.id)} className="text-slate-600">
               Mejor lo mantengo
             </button>
           </div>

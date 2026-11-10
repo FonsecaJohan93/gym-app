@@ -46,11 +46,11 @@ export function ExercisePicker({
       <header className="mx-auto w-full max-w-lg px-4 pt-3 pb-2">
         <div className="flex items-center justify-between">
           <h2 className="text-xl font-bold">{title}</h2>
-          <button onClick={onClose} className="px-2 text-2xl text-slate-400" aria-label="Cerrar">
+          <button onClick={onClose} className="px-2 text-2xl text-slate-600" aria-label="Cerrar">
             ✕
           </button>
         </div>
-        {replacing && <p className="text-sm text-slate-400">En lugar de {replacing.es}</p>}
+        {replacing && <p className="text-sm text-slate-600">En lugar de {replacing.es}</p>}
         <input
           type="search"
           value={query}
@@ -64,7 +64,7 @@ export function ExercisePicker({
               key={g ?? 'todos'}
               onClick={() => setGroup(g)}
               className={`shrink-0 rounded-full border px-3.5 py-1.5 text-sm whitespace-nowrap ${
-                group === g ? 'border-accent bg-accent/15 text-accent' : 'border-line text-slate-300'
+                group === g ? 'border-accent bg-accent/15 text-accent' : 'border-line text-slate-700'
               }`}
             >
               {g ?? 'Todos'}
@@ -74,7 +74,7 @@ export function ExercisePicker({
       </header>
 
       <div className="pb-safe mx-auto w-full max-w-lg flex-1 space-y-2 overflow-y-auto px-4 pb-6">
-        {list.length === 0 && <p className="py-10 text-center text-slate-400">Sin resultados.</p>}
+        {list.length === 0 && <p className="py-10 text-center text-slate-600">Sin resultados.</p>}
         {list.map((e) => {
           const recommended = (rank.get(e.id) ?? 999) < 3
           return (
@@ -87,7 +87,7 @@ export function ExercisePicker({
               <div className="min-w-0 flex-1">
                 <div className="leading-tight font-semibold">{e.es}</div>
                 <div className="truncate text-xs text-slate-500">{e.en}</div>
-                <div className="mt-0.5 text-xs text-slate-400">
+                <div className="mt-0.5 text-xs text-slate-600">
                   {e.group} · {e.equipment}
                   {recommended && <span className="ml-1.5 text-accent">★ Recomendado</span>}
                 </div>

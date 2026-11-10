@@ -5,6 +5,7 @@ import { dayLabel } from '../lib/split'
 import {
   addToWorkout,
   cancelWorkout,
+  endWorkoutEarly,
   finishWorkout,
   postponeCurrent,
   setDraftIndex,
@@ -168,6 +169,12 @@ export default function Workout() {
         <span className="text-sm text-slate-600">
           {draft.index + 1}/{total}
         </span>
+        <button
+          onClick={endWorkoutEarly}
+          className="rounded-full border border-line px-3 py-1 text-xs font-medium text-slate-700 active:bg-panel"
+        >
+          Terminar por hoy
+        </button>
       </div>
 
       <ExerciseImage key={id} id={id} animate className="mx-4 mt-3 aspect-[4/3] rounded-2xl" />

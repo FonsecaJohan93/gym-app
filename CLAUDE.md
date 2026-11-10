@@ -28,6 +28,7 @@ React 19 + TypeScript + Vite + Tailwind v4 (plugin `@tailwindcss/vite`) + `vite-
 - Los días van en secuencia rotativa (A/B/C…), no por día de la semana.
 - Durante el entrenamiento, el orden de hoy vive en `draft.order`:
   - "Para luego" manda el ejercicio actual al final (por ejemplo, máquina ocupada). Solo en el último ejercicio aparece "Hoy no lo hice".
+  - "Terminar por hoy" (arriba a la derecha, `endWorkoutEarly`) marca como no hecho lo que no tiene veredicto y pasa al resumen. "✕" descarta todo el entrenamiento.
   - "Cambiar por otro" abre la biblioteca en el mismo grupo muscular, con los recomendados primero.
   - "Agregar ejercicio" inserta el elegido como el siguiente.
   - Arriba muestra 3 recomendados (`addRecommendations` en `insights.ts`). El puntaje considera: el grupo con menos ejercicios hoy, músculos que la rutina no cubre, músculos sin trabajar en 7 días o más, el historial (útil > nunca probado > no me gustó), el mismo equipo y menos peso a nivel experto. Penaliza repetir grupo. No se le hacen preguntas nuevas al usuario (decisión del dueño).

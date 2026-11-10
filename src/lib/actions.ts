@@ -116,6 +116,20 @@ export function setDraftIndex(index: number): void {
   setState((s) => (s.draft ? { ...s, draft: { ...s.draft, index } } : s))
 }
 
+/**
+ * "Terminar por hoy": lo que ya calificaste se queda, lo que falta queda como no hecho,
+ * y se pasa al resumen para guardar (desde ahí aún se puede volver a un ejercicio).
+ */
+export function endWorkoutEarly(): void {
+  setState((s) => {
+    if (!s.draft || !s.plan) return s
+    const order = workoutOrder(s.draft, s.plan)
+    const entries = { ...s.draft.entries }
+    for (const id of order) if (!entries[id]?.verdict) entries[id] = { ...entries[id], skipped: true, verdict: null }
+    return { ...s, draft: { ...s.draft, entries, index: order.length } }
+  })
+}
+
 export function cancelWorkout(): void {
   setState((s) => ({ ...s, draft: null }))
 }

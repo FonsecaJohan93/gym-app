@@ -2,6 +2,9 @@
 
 La versión se ve en Historial (abajo) y en la pantalla de inicio de sesión.
 
+## 0.7.1 — 2026-11-10
+- Botón "Terminar por hoy" en el entreno: guarda lo que ya calificaste y marca lo que falta como no hecho (pasa al resumen antes de guardar).
+
 ## 0.7.0 — 2026-11-10
 - "Agregar ejercicio" muestra 3 recomendados para hoy, cada uno con su razón: lo que le falta al día, músculos que no trabajas hace días, tu historial (útil o nunca probado) y el mismo tipo de equipo.
 

@@ -28,6 +28,7 @@ React 19 + TypeScript + Vite + Tailwind v4 (plugin `@tailwindcss/vite`) + `vite-
 - Los días van en secuencia rotativa (A/B/C…), no por día de la semana.
 - Durante el entrenamiento, el orden de hoy vive en `draft.order`:
   - "Para luego" manda el ejercicio actual al final (por ejemplo, máquina ocupada). Solo en el último ejercicio aparece "Hoy no lo hice".
+  - Descanso entre series (`RestTimer.tsx`, ajustes en Historial, `settings` en `AppState`): "Serie lista" suma a `draft.setsDone` (solo ayuda a contar; el registro sigue siendo por ejercicio) y guarda `draft.rest.endsAt`, la hora real de fin, para que siga contando con el celular bloqueado. No hay notificaciones con la pantalla bloqueada (decisión del dueño); mientras cuenta se pide pantalla encendida (Wake Lock).
   - "Terminar por hoy" (arriba a la derecha, `endWorkoutEarly`) marca como no hecho lo que no tiene veredicto y pasa al resumen. "✕" descarta todo el entrenamiento.
   - "Cambiar por otro" abre la biblioteca en el mismo grupo muscular, con los recomendados primero.
   - "Agregar ejercicio" inserta el elegido como el siguiente.

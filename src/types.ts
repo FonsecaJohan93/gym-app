@@ -58,7 +58,16 @@ export interface Draft {
   index: number
   /** Orden de hoy (cambia con "para luego", agregar o cambiar). Sin él, el orden del día del plan. */
   order?: string[]
+  /** Series marcadas con el botón de descanso, por ejercicio (solo ayuda a contar; no se guarda en la sesión) */
+  setsDone?: Record<string, number>
+  /** Descanso en curso: se guarda la hora de fin para que siga contando con el celular bloqueado */
+  rest?: { endsAt: string; seconds: number } | null
   entries: Record<string, Entry>
+}
+
+export interface Settings {
+  restEnabled: boolean
+  restSeconds: number
 }
 
 export interface AppState {
@@ -70,6 +79,7 @@ export interface AppState {
   /** exerciseId -> nº de registros que tenía cuando se descartó la propuesta de reemplazo */
   dismissed: Record<string, number>
   draft: Draft | null
+  settings?: Settings
   /** Última modificación; decide qué copia gana al sincronizar */
   updatedAt?: string
 }

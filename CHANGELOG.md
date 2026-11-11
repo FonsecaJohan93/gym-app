@@ -2,6 +2,10 @@
 
 La versión se ve en Historial (abajo) y en la pantalla de inicio de sesión.
 
+## 0.8.0 — 2026-11-10
+- Temporizador de descanso entre series: botón "Serie lista" que cuenta las series y arranca la cuenta regresiva (−15 s / +15 s / Saltar). Sigue contando con el celular bloqueado y al volver muestra cuánto pasaste. Pitido y destello al terminar (vibración en Android) y pantalla encendida mientras cuenta.
+- Ajustes en Historial: activar o desactivar el descanso y elegir el tiempo (1:30 por defecto).
+
 ## 0.7.1 — 2026-11-10
 - Botón "Terminar por hoy" en el entreno: guarda lo que ya calificaste y marca lo que falta como no hecho (pasa al resumen antes de guardar).
 

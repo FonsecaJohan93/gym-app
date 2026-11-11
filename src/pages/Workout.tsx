@@ -5,6 +5,8 @@ import { dayLabel } from '../lib/split'
 import {
   addToWorkout,
   cancelWorkout,
+  getSettings,
+  startRest,
   endWorkoutEarly,
   finishWorkout,
   postponeCurrent,
@@ -17,6 +19,8 @@ import { addRecommendations, effortHint, lastEntry, relativeDay, EFFORT_LABEL, V
 import { useAppState } from '../lib/store'
 import { ExerciseImage } from '../components/ExerciseImage'
 import { ExercisePicker } from '../components/ExercisePicker'
+import { formatClock, RestTimer } from '../components/RestTimer'
+import { primeAudio } from '../lib/sound'
 import type { Effort, Exercise, Verdict } from '../types'
 
 const VERDICTS: { v: Verdict; on: string }[] = [
@@ -51,8 +55,10 @@ export default function Workout() {
     }
   }
 
+  const settings = getSettings(state)
   const overlays = (
     <>
+      {draft.rest && <RestTimer key={draft.rest.endsAt} endsAt={draft.rest.endsAt} seconds={draft.rest.seconds} />}
       {picker && (
         <ExercisePicker
           title={picker === 'add' ? 'Agregar ejercicio' : 'Cambiar por otro'}
@@ -155,6 +161,7 @@ export default function Workout() {
   const last = lastEntry(sessions, id)
   const hint = effortHint(last)
   const set = (patch: Parameters<typeof updateEntry>[1]) => updateEntry(id, patch)
+  const setsDone = draft.setsDone?.[id] ?? 0
 
   return (
     <div className="pb-safe">
@@ -218,6 +225,26 @@ export default function Workout() {
           <Stepper label="Series" value={entry.sets} step={1} onChange={(sets) => set({ sets })} />
           <Stepper label="Reps" value={entry.reps} step={1} onChange={(reps) => set({ reps })} />
         </div>
+
+        {settings.restEnabled && (
+          <button
+            onClick={() => {
+              primeAudio() // el toque "desbloquea" el sonido para el pitido final
+              startRest(id)
+            }}
+            className="mt-3 flex w-full items-center justify-between rounded-xl border-2 border-accent bg-accent/10 px-4 py-3 text-left active:scale-[0.99]"
+          >
+            <span>
+              <span className="block font-semibold text-accent">⏱ Serie lista · descansar {formatClock(settings.restSeconds)}</span>
+              <span className="text-xs text-slate-600">
+                Llevas {setsDone} de {entry.sets ?? '?'} series
+              </span>
+            </span>
+            <span className="text-2xl font-bold text-accent tabular-nums">
+              {setsDone}/{entry.sets ?? '?'}
+            </span>
+          </button>
+        )}
 
         <textarea
           value={entry.comment}
@@ -285,6 +312,8 @@ export default function Workout() {
             </button>
           )}
         </div>
+        {/* espacio para que el temporizador no tape los botones */}
+        {draft.rest && <div className="h-64" />}
       </div>
     </div>
   )

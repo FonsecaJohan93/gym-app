@@ -41,3 +41,10 @@ body {
 .bg-panel {
   box-shadow: 0 0 0 1px var(--color-line), 0 1px 2px rgb(15 23 42 / 0.04);
 }
+
+/* Destello del temporizador al terminar el descanso */
+@keyframes flash {
+  50% {
+    filter: brightness(1.35);
+  }
+}

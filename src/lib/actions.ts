@@ -1,6 +1,6 @@
 import { getState, setState } from './store'
 import { historyOf, lastEntry } from './insights'
-import type { Draft, Entry, Plan, PlanDay, Session } from '../types'
+import type { AppState, Draft, Entry, Plan, PlanDay, Session, Settings } from '../types'
 
 export function toggleSelection(id: string): void {
   setState((s) => ({
@@ -187,4 +187,38 @@ export function dismissProposal(exerciseId: string): void {
 
 export function deleteSession(id: string): void {
   setState((s) => ({ ...s, sessions: s.sessions.filter((x) => x.id !== id) }))
+}
+
+export const DEFAULT_SETTINGS: Settings = { restEnabled: true, restSeconds: 90 }
+
+export function getSettings(s: AppState): Settings {
+  return { ...DEFAULT_SETTINGS, ...s.settings }
+}
+
+export function updateSettings(patch: Partial<Settings>): void {
+  setState((s) => ({ ...s, settings: { ...getSettings(s), ...patch } }))
+}
+
+/** Marca una serie hecha del ejercicio y arranca el descanso. */
+export function startRest(exerciseId: string): void {
+  setState((s) => {
+    if (!s.draft) return s
+    const seconds = getSettings(s).restSeconds
+    const setsDone = { ...s.draft.setsDone, [exerciseId]: (s.draft.setsDone?.[exerciseId] ?? 0) + 1 }
+    return { ...s, draft: { ...s.draft, setsDone, rest: { endsAt: new Date(Date.now() + seconds * 1000).toISOString(), seconds } } }
+  })
+}
+
+/** Suma o resta segundos al descanso en curso. */
+export function adjustRest(deltaSeconds: number): void {
+  setState((s) => {
+    const rest = s.draft?.rest
+    if (!s.draft || !rest) return s
+    const endsAt = new Date(new Date(rest.endsAt).getTime() + deltaSeconds * 1000).toISOString()
+    return { ...s, draft: { ...s.draft, rest: { endsAt, seconds: Math.max(5, rest.seconds + deltaSeconds) } } }
+  })
+}
+
+export function endRest(): void {
+  setState((s) => (s.draft ? { ...s, draft: { ...s.draft, rest: null } } : s))
 }

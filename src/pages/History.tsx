@@ -1,7 +1,8 @@
 import { useRef, useState } from 'react'
 import { getExercise } from '../lib/exercises'
 import { dayLabel } from '../lib/split'
-import { deleteSession } from '../lib/actions'
+import { deleteSession, getSettings, updateSettings } from '../lib/actions'
+import { formatClock } from '../components/RestTimer'
 import { relativeDay, EFFORT_LABEL, VERDICT_LABEL } from '../lib/insights'
 import { APP_VERSION } from '../lib/version'
 import { PageTitle } from '../components/Menu'
@@ -96,6 +97,8 @@ export default function History() {
         </div>
       </section>
 
+      <RestSettings />
+
       <section className="mt-3 mb-4 rounded-2xl border border-line p-4">
         <h2 className="font-semibold">Respaldo</h2>
         <p className="mt-1 text-sm text-slate-600">
@@ -123,5 +126,66 @@ export default function History() {
 
       <p className="mb-6 text-center text-xs text-slate-500">Gym {APP_VERSION}</p>
     </div>
+  )
+}
+
+const REST_PRESETS = [60, 90, 120, 150, 180]
+
+function RestSettings() {
+  const { restEnabled, restSeconds } = getSettings(useAppState())
+  return (
+    <section className="mt-3 rounded-2xl border border-line p-4">
+      <div className="flex items-center justify-between gap-3">
+        <div>
+          <h2 className="font-semibold">Descanso entre series</h2>
+          <p className="text-sm text-slate-600">Temporizador con el botón "Serie lista" durante el entreno.</p>
+        </div>
+        <button
+          role="switch"
+          aria-checked={restEnabled}
+          aria-label="Activar temporizador de descanso"
+          onClick={() => updateSettings({ restEnabled: !restEnabled })}
+          className={`relative h-8 w-14 shrink-0 rounded-full transition-colors ${restEnabled ? 'bg-accent' : 'bg-slate-300'}`}
+        >
+          <span
+            className={`absolute top-1 left-1 h-6 w-6 rounded-full bg-white shadow transition-transform ${restEnabled ? 'translate-x-6' : ''}`}
+          />
+        </button>
+      </div>
+      {restEnabled && (
+        <>
+          <div className="mt-4 flex items-center justify-between">
+            <button
+              onClick={() => updateSettings({ restSeconds: Math.max(15, restSeconds - 15) })}
+              className="h-11 w-14 rounded-xl border border-line text-lg font-semibold text-slate-700"
+              aria-label="Menos 15 segundos"
+            >
+              −15
+            </button>
+            <span className="text-3xl font-bold tabular-nums">{formatClock(restSeconds)}</span>
+            <button
+              onClick={() => updateSettings({ restSeconds: Math.min(600, restSeconds + 15) })}
+              className="h-11 w-14 rounded-xl border border-line text-lg font-semibold text-slate-700"
+              aria-label="Más 15 segundos"
+            >
+              +15
+            </button>
+          </div>
+          <div className="mt-3 grid grid-cols-5 gap-2">
+            {REST_PRESETS.map((sec) => (
+              <button
+                key={sec}
+                onClick={() => updateSettings({ restSeconds: sec })}
+                className={`rounded-lg border py-2 text-sm ${
+                  sec === restSeconds ? 'border-accent bg-accent/15 font-semibold text-accent' : 'border-line text-slate-700'
+                }`}
+              >
+                {formatClock(sec)}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </section>
   )
 }
